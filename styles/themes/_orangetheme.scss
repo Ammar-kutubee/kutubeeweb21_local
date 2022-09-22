@@ -1,0 +1,225 @@
+.viewText {
+    color: $orange;
+}
+.viewArrow.icon-right-arrow {
+    color: $orange;
+    font-size: 10px;
+    margin-top: 0px;
+}
+.inside-page-wrapper {
+    .blue-bg {
+        background: $orange;
+    }
+}
+.book-menu {
+    .menuButtonLandscape {
+        &.selected {
+            border-color: $orange;
+        }
+    }
+    .fillBlue {
+        fill: $orange;
+    }
+}
+.back-icon {
+    color: $orange;
+    border: solid 2px $orange;
+}
+.zoom-menu {
+    .menuButtonLandscape {
+        &.selected {
+            border-color: $orange;
+        }
+    }
+    .fillBlue {
+        fill: $orange;
+    }
+    .go-back-tools {
+        color: $orange;
+    }
+}
+.prev-page {
+    color: $orange;
+    border: solid 2px $orange;
+}
+.next-page {
+    color: $orange;
+    border: solid 2px $orange;
+}
+.back-icon {
+    color: $orange;
+    border: solid 2px $orange;
+}
+.playForMe {
+    background-color: $orange;
+}
+.numberOfRatings {
+    color: $orange;
+}
+.infoIcon {
+    color: $orange;
+}
+.addRateText {
+    color: $orange;
+}
+.closeIcon {
+    color: $orange;
+}
+.levelLibrary {
+    color: $orange;
+}
+.bookActivityNumber {
+    color: $orange;
+}
+.icon-share {
+    color: $orange;
+}
+.languageButton {
+    &:hover {
+        border-color: $orange;
+        box-shadow: 0 0 0 3px $orange;
+    }
+}
+.buttonWrapper {
+    background-color: $orange;
+}
+
+.loginByText {
+    color: $orange;
+}
+.blueText {
+    color: $orange;
+}
+.eyeIcon {
+    color: $orange;
+}
+.eyeIconClosed {
+    color: $orange;
+}
+.text-blue {
+    color: $orange;
+}
+.ui.button {
+    color: $orange !important;
+}
+a {
+    color: $orange !important;
+}
+.bluek {
+    color: $orange;
+}
+.ui.modal > .content > .description {
+    .actions {
+        .ui.button {
+            &.active {
+                background-color: $orange !important;
+            }
+        }
+    }
+}
+.react-tabs__tab {
+    color: $orange;
+}
+.blueText {
+    color: $orange;
+}
+.blueArrow {
+    color: $orange;
+}
+.viewArrow {
+    color: $orange;
+}
+.viewMore {
+    color: $orange;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background-color: $orange !important;
+    background: $orange !important;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background: $orange !important;
+}
+.pageWrapper .loginboxWrapper .loginboxButton {
+    &:hover {
+        box-shadow: 0 0 0 3px $orange;
+    }
+}
+.pageWrapper .loginForm .forgetPassword {
+    color: $orange;
+}
+.gridItem {
+    &:hover {
+        border: 1px solid $orange;
+    }
+}
+.gridItem:hover {
+    border: 1px solid $orange;
+}
+
+.selectedGridItem {
+    border-color: $orange;
+}
+.eyeIcon {
+    color: $orange;
+}
+.eyeIconClose {
+    color: $orange;
+}
+.borderblue {
+    border: 3px solid $orange;
+}
+.readAgain {
+    color: $orange;
+}
+.exit {
+    color: $orange;
+}
+.levelMean {
+    color: $orange;
+}
+.inside-page-content.nogap {
+    background: $orange;
+}
+.border-blue {
+    border: 3px solid $orange;
+}
+.selected {
+    color: $orange;
+}
+.color-blue {
+    color: $orange;
+}
+.ui.vertical.menu .item > .label {
+    color: $orange !important;
+}
+.link-icon {
+    color: $orange;
+}
+.btn-link {
+    border: 2px solid $orange;
+}
+.btn-link.active {
+    background: $orange;
+}
+.bookButton {
+    &:not(.greyButton){
+        background-color: $orange;
+    }
+    path {
+        stroke: $orange;
+    }
+}
+.ps__thumb-y{
+    background-color:$orange !important;
+}
+
+::selection {
+    background-color: $orange;
+    color: $white;
+}

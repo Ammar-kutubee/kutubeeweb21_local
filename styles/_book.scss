@@ -1,0 +1,591 @@
+.bookswrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vw;
+    width: 100%;
+    margin-bottom: calc(30px + 1vw);
+}
+.inside-book-cover {
+    width: 25vw !important;
+}
+.bookWrapper,
+.badge-item {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    border: 1px solid $secondaryGrey;
+    background-color: $white;
+    filter: drop-shadow(0px 0px 4px rgba(170, 170, 170, 0.25));
+    cursor: pointer;
+
+    img {
+        // width: 190px;
+    }
+    .cover {
+        border-radius: 3px;
+        border-bottom: 1px solid $secondaryGrey;
+    }
+
+    .progressBarWrapper {
+        padding: 5px;
+        // : 5,
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+    .progressBar {
+        // width: '100%',
+        flex-grow: 1;
+        background-color: $progressGrey;
+        height: 4px;
+        border-radius: 10px;
+        position: relative;
+    }
+    .progressBarGreen {
+        height: 4px;
+        border-radius: 4px;
+        background-color: $green;
+        position: absolute;
+        top: 0px;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #86cf0e;
+        position: absolute;
+        top: 0px;
+    }
+    .buttonsWrapper {
+        border-top-color: $secondaryGrey;
+        border-top-style: solid;
+        border-top-width: 1px;
+        height: 27px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .button {
+        height: 100%;
+    }
+    .buttonFinished {
+        .buttonDot {
+            position: absolute;
+            bottom: 10px;
+            height: 4px;
+            width: 4px;
+            background-color: $secondaryGrey;
+            border-radius: 50px;
+        }
+    }
+    .lastButton {
+        border-right-width: 0;
+    }
+    .lastButton {
+        border-right-width: 0;
+    }
+    .buttonText {
+        font-size: 12px;
+        color: $grey;
+        font-family: $sfMedium, $tMedium;
+    }
+    .buttonFinished {
+        // backgroundColor:theme.colors.blue,
+    }
+    .buttonFinishedText {
+        color: $green;
+    }
+    .typeIcon {
+        color: $pink;
+        font-size: 13px;
+    }
+    .typeText {
+        color: $pink;
+        font-size: 12px;
+        margin-left: 3px;
+        font-family: $sfRegular, $tMedium;
+    }
+    .arabicText {
+        font-family: $tMedium;
+    }
+}
+
+.tick {
+    svg {
+        position: absolute;
+        bottom: 0px;
+        top: auto;
+    }
+}
+.buttonsWrapper {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    gap: 1vw;
+}
+.sectionTitle {
+    color: $black;
+    font-family: $hekayaLight;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+.bookButton {
+    background-color: #6ac3db;
+    border-radius: 20px;
+    height: 37px;
+    -moz-box-pack: center;
+    justify-content: center;
+    -moz-box-align: center;
+    align-items: center;
+    width: 84px;
+    align-self: center;
+    // margin: 0px 1.5%;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+.greyButton {
+    background-color: $secondaryGrey;
+}
+
+.bookButtonText {
+    font-size: 24px;
+    line-height: 24px;
+    color: $white;
+    font-family: $hekayaLight;
+}
+.greyButtonText {
+    color: $grey;
+}
+.titleRatingWrapper {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.titleWrapper {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.titleText {
+    color: $black;
+    font-size: 36px;
+    font-family: $hekayaLight;
+    line-height: 36px;
+    // text-align: left;
+}
+.ratingWrapper {
+    color: $black;
+    flex-direction: row;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+}
+.rtlDir .container {
+    border-left: 1px solid $secondaryGrey;
+    border-right: 0px solid $secondaryGrey;
+}
+.container {
+    padding: 20px 0px 20px 0px;
+
+    width: 100%;
+    border-right: 1px solid $secondaryGrey;
+    border-left: 0px solid $secondaryGrey;
+}
+.insideActivity.container {
+    border-right: 0px;
+    border-left: 0px;
+    padding-bottom: 0px;
+}
+.bordersgrey {
+    border-top: 1px solid $secondaryGrey;
+    border-bottom: 1px solid $secondaryGrey;
+}
+.border-bottom-grey {
+    border-bottom: 1px solid $secondaryGrey;
+}
+.ratingText {
+    color: $grey;
+    font-family: $sfSemibold, $tMedium;
+    font-size: 18px;
+    margin-inline-start: 13px;
+}
+.numberOfRatings {
+    color: $blue;
+    font-family: $sfSemibold, $tMedium;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.bookInfoWrapper {
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 30px;
+    display: flex;
+    // padding: 0 20px;
+    border-bottom: 1px solid $secondaryGrey;
+}
+.bookInfoColumn {
+    width: 25%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.bookInfoFullColumn {
+    width: 100%;
+}
+.bookInfoTitle {
+    font-size: 14px;
+    color: $thirdGrey;
+    font-family: $sfRegular, $tMedium;
+    // text-align: left;
+}
+.bookInfoText {
+    font-size: 18px;
+    color: $grey;
+    font-family: $sfSemibold, $tMedium;
+    // text-align: left;
+    &.leveltext {
+        font-size: 26px;
+    }
+}
+.infoIcon {
+    color: $blue;
+    font-size: 22px;
+}
+.bookTags {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 35px;
+    display: flex;
+    gap: 20px;
+}
+.tag {
+    background-color: $white;
+    border-radius: 76px;
+    border-width: 1px;
+    border-color: $secondaryGrey;
+    padding: 8px 15px;
+    margin-bottom: 7px;
+    border-style: solid;
+    cursor: pointer;
+}
+.tagText {
+    font-size: 14px;
+    color: $grey;
+    font-family: $sfSemibold, $tMedium;
+}
+
+.ratingsWrapper {
+    width: 100%;
+    .sectionTitle {
+        padding: 0 20px;
+    }
+    .ratingList {
+        padding: 0 20px;
+    }
+}
+.addRateText {
+    color: $blue;
+    font-family: $sfSemibold, $tMedium;
+    font-size: 14px;
+    cursor: pointer;
+}
+.closeIconWrapper {
+    position: absolute;
+    top: 5px;
+}
+.closeIcon {
+    color: $blue;
+    font-size: 26px;
+}
+.rating {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-width: 1px;
+    border-bottom-color: $secondaryGrey;
+    padding-bottom: 13px;
+    margin-bottom: 10px;
+    border-bottom-style: solid;
+}
+.ui.star.rating .icon {
+    &::before {
+        font-family: "icomoon" !important;
+        speak: never;
+        font-style: normal !important;
+        font-weight: normal !important;
+        -webkit-font-feature-settings: normal !important;
+        -moz-font-feature-settings: normal !important;
+        font-feature-settings: normal !important;
+        font-variant: normal !important;
+        text-transform: none !important;
+        line-height: 1 !important;
+        -webkit-font-smoothing: antialiased !important;
+        -moz-osx-font-smoothing: grayscale !important;
+        color: $yellow !important;
+        content: "\e914" !important;
+    }
+    &.selected,
+    &.active {
+        &::before {
+            content: "" !important;
+        }
+    }
+}
+.lastRating {
+    border-bottom-width: 0px;
+}
+.userRatingAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    object-fit: contain;
+    cursor: pointer;
+    border: 1px solid $secondaryGrey;
+    // margin-left:-8px;
+    // margin-right:-8px;
+    position: relative;
+    z-index: 11;
+    background: #fff;
+    //  margin-inline-start: 8px;
+    &:last-child {
+        margin-left:0px;
+    }
+}
+.userRating {
+    font-size: 18px;
+    font-family: $sfRegular, $tMedium;
+    color: $grey;
+    padding-inline-start: 5px;
+}
+.relatedBooksWrapper {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.evelSubTitle {
+    font-family: $hekayaLight;
+    font-size: 24px;
+    color: $grey;
+    margin-bottom: 15px;
+}
+.levelStep {
+    font-family: $sfRegular, $tMedium;
+    font-size: 14px;
+    color: $grey;
+}
+.levelLibrary {
+    font-family: $sfRegular, $tMedium;
+    font-size: 14px;
+    color: $blue;
+    margin-top: 35px;
+}
+
+.insideActivity {
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    flex-direction: row;
+    display: -moz-box;
+    display: flex;
+    grid-gap: 15px;
+    gap: 15px;
+
+    flex-grow: 1;
+    align-items: flex-end;
+}
+.iconsactivity {
+    flex-direction: row;
+    display: -moz-box;
+    display: flex;
+    grid-gap: 1.1vw;
+    gap: 2.5vw;
+    padding: 30px 0px;
+    margin-top: 25px;
+    width: 100%;
+}
+.iconWrapper {
+    -moz-box-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
+    display: flex;
+    gap: 10px;
+}
+.iconBox {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    -moz-box-align: center;
+    align-items: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    border-width: 1px;
+    border-color: $secondaryGrey;
+    border-radius: 6px;
+    display: flex;
+    border-style: solid;
+    padding: 4px;
+}
+.bookActivityNumber {
+    font-size: 24px;
+    font-family: $sfSemibold, $tMedium;
+    line-height: 28px;
+    color: $blue;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+.bookactivitytitle {
+    font-size: 14px;
+    font-family: $sfSemibold, $tMedium;
+    color: $grey;
+}
+.bookActivityWrapper {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    display: flex;
+}
+.sectionSplitter {
+    height: 4px;
+    width: 100%;
+    background-color: #ebebeb;
+}
+.fav {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-bottom-left-radius: 6px;
+    background-color: $white;
+    height: 30px;
+    width: 30px;
+    border-color: $secondaryGrey;
+    border-width: 1px;
+    border-top-right-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 4px rgba(170, 170, 170, 0.25);
+}
+.favIcon {
+    color: $red;
+    font-size: 20px;
+}
+.icon-full-heart.favIcon {
+    font-size: 22px;
+}
+
+.bookItemWrapper {
+    // flex-grow: 1;
+    position: relative;
+}
+.bookItemWrapper .buttonsWrapper {
+    margin-top: 0px;
+}
+.icon-share {
+    color: $blue;
+    font-size: 21px;
+}
+
+.shareWrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    gap: 1vw;
+}
+
+.ui.modal.tiny.addrate {
+    .description {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .rating {
+            border: 0px !important;
+            margin: 50px 0px;
+        }
+    }
+    .buttonWrapper {
+        width: 75%;
+    }
+    .ui.star.rating .active.icon {
+        color: #ffd217 !important;
+    }
+}
+.ui.star.rating .icon {
+    font-size: 55px;
+}
+.ui.active.modal {
+    border-radius: 16px;
+    overflow: hidden;
+}
+.filterModal {
+    .scrolling {
+        .description {
+            padding-bottom: 100px !important;
+        }
+
+        .action button {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            right: 0;
+            left: 0;
+        }
+    }
+}
+
+.quizmodal {
+    padding: 20px;
+    .description {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 2vw;
+        font-family: $hekayaLight;
+        font-size: 1.9vw;
+    }
+
+    &.rtlDir {
+        text-align: right !important;
+    }
+}
+.ui.fullscreen.modal.profileModal {
+    width: calc(100% - 2em - 80px) !important;
+    left: 0 !important;
+    height: calc(100% - 2em - 80px) !important;
+    right: 0 !important;
+    margin: auto !important;
+    .header {
+        border: 0px !important;
+        .actions {
+            padding: 10px;
+        }
+    }
+}
+.profile-report-text {
+    font-family: $sfRegular, $tMedium;
+    font-size: 1.3vw;
+    color: $thirdGrey;
+}
+.schoolname-profile {
+    font-family: $sfSemibold, $tMedium;
+    font-size: 1.9vw;
+    color: $grey;
+}
+.friendsModal .rating {
+    cursor: pointer;
+}

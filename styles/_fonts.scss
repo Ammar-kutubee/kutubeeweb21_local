@@ -1,0 +1,208 @@
+@font-face {
+    font-family: "SF-Compact-Rounded-Regular";
+    src: url("../public/fonts/SFCompactRounded-Regular.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF-Compact-Rounded-Medium";
+    src: url("../public/fonts/SFCompactRounded-Medium.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF-Compact-Rounded-Heavy";
+    src: url("../public/fonts/SFCompactRounded-Heavy.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Heavy.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FFHekaya-Light";
+ //    src: url("../public/fonts/FFHekaya-Light.woff2") format("woff2"),
+    //     url("../public/fonts/FFHekaya-Light.woff") format("woff");
+      src:url("../public/fonts/FFHekaya-Light.ttf") format("truetype");
+  //  src:url("../public/fonts/koodak-schools.ttf") format("truetype");
+
+
+     
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "FFHekaya-Normal";
+    src: url("../public/fonts/FFHekaya-Normal.woff2") format("woff2"),
+        url("../public/fonts/FFHekaya-Normal.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF-Compact-Rounded-Black";
+    src: url("../public/fonts/SFCompactRounded-Black.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF-Compact-Rounded-Bold";
+    src: url("../public/fonts/SFCompactRounded-Bold.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF-Compact-Rounded-Light";
+    src: url("../public/fonts/SFCompactRounded-Light.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Light.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal-Bold";
+    src: url("../public/fonts/Tajawal-Bold.woff2") format("woff2"),
+        url("../public/fonts/Tajawal-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal-ExtraBold";
+    src: url("../public/fonts/Tajawal-ExtraBold.woff2") format("woff2"),
+        url("../public/fonts/Tajawal-ExtraBold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal=ExtraLight";
+    src: url("../public/fonts/Tajawal-ExtraLight.woff2") format("woff2"),
+        url("../public/fonts/Tajawal-ExtraLight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF-Compact-Rounded-Thin";
+    src: url("../public/fonts/SFCompactRounded-Thin.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Thin.woff") format("woff");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal-Black";
+    src: url("../public/fonts/Tajawal-Black.woff2") format("woff2"),
+        url("../public/fonts/Tajawal-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF-Compact-Rounded-Semibold";
+    src: url("../public/fonts/SFCompactRounded-Semibold.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Semibold.woff") format("woff");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SF-Compact-Rounded-Ultralight";
+    src: url("../public/fonts/SFCompactRounded-Ultralight.woff2") format("woff2"),
+        url("../public/fonts/SFCompactRounded-Ultralight.woff") format("woff");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal-Medium";
+    src: url("../public/fonts/Tajawal-Medium.woff2") format("woff2"),
+        url("../public/fonts/Tajawal-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal-Regular";
+    src: url("../public/fonts/Tajawal-Regular.woff2") format("woff2"),
+        url("../public/fonts/Tajawal-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tajawal-Light";
+    src: url("../public/fonts/Tajawal-Light.woff2") format("woff2"),
+        url("../public/fonts/Tajawal-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Adobe-Arabic";
+    src: url("../public/fonts/AdobeArabic-Regular.woff2") format("woff2"),
+        url("../public/fonts/AdobeArabic-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "icomoon";
+    src: url("../public/fonts/icomoon.eot");
+    src: url("../public/fonts/icomoon.eot?yi9e2c#iefix") format("embedded-opentype"),
+        url("../public/fonts/icomoon.ttf?yi9e2c") format("truetype"),
+        url("../public/fonts/icomoon.woff?yi9e2c") format("woff"),
+        url("../public/fonts/icomoon.svg?yi9e2c#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+$adobe-arabic:Adobe-Arabic;
+$hekayaLight: FFHekaya-Light;
+$hekayaNormal: FFHekaya-Normal;
+$sfThin: SF-Compact-Rounded-Thin; // 100
+$sfUltralight: SF-Compact-Rounded-Ultralight; // 200
+$sfLight: SF-Compact-Rounded-Light; // 300
+$sfRegular: SF-Compact-Rounded-Regular; // 400
+$sfMedium: SF-Compact-Rounded-Medium; // 500
+$sfSemibold: SF-Compact-Rounded-Semibold; // 600
+$sfBold: SF-Compact-Rounded-Bold; // 700
+$sfBlack: SF-Compact-Rounded-Black; // 800
+$sfHeavy: SF-Compact-Rounded-Heavy; // 900
+
+$tExtraLight: Tajawal-ExtraLight; // 200
+$tLight: Tajawal-Light; // 300
+$tRegular: Tajawal-Regular; // 400
+$tMedium: Tajawal-Medium; // 500
+$tSemibold: SF-Compact-Rounded-Semibold; // 600
+$tBold: Tajawal-Bold; // 700
+$tBlack: Tajawal-Black; // 800
+$icomoon: icomoon;

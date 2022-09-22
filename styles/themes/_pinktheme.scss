@@ -1,0 +1,225 @@
+.viewText {
+    color: $pink;
+}
+.viewArrow.icon-right-arrow {
+    color: $pink;
+    font-size: 10px;
+    margin-top: 0px;
+}
+.inside-page-wrapper {
+    .blue-bg {
+        background: $pink;
+    }
+}
+.book-menu {
+    .menuButtonLandscape {
+        &.selected {
+            border-color: $pink;
+        }
+    }
+    .fillBlue {
+        fill: $pink;
+    }
+}
+.back-icon {
+    color: $pink;
+    border: solid 2px $pink;
+}
+.zoom-menu {
+    .menuButtonLandscape {
+        &.selected {
+            border-color: $pink;
+        }
+    }
+    .fillBlue {
+        fill: $pink;
+    }
+    .go-back-tools {
+        color: $pink;
+    }
+}
+.prev-page {
+    color: $pink;
+    border: solid 2px $pink;
+}
+.next-page {
+    color: $pink;
+    border: solid 2px $pink;
+}
+.back-icon {
+    color: $pink;
+    border: solid 2px $pink;
+}
+.playForMe {
+    background-color: $pink;
+}
+.numberOfRatings {
+    color: $pink;
+}
+.infoIcon {
+    color: $pink;
+}
+.addRateText {
+    color: $pink;
+}
+.closeIcon {
+    color: $pink;
+}
+.levelLibrary {
+    color: $pink;
+}
+.bookActivityNumber {
+    color: $pink;
+}
+.icon-share {
+    color: $pink;
+}
+.languageButton {
+    &:hover {
+        border-color: $pink;
+        box-shadow: 0 0 0 3px $pink;
+    }
+}
+.buttonWrapper {
+    background-color: $pink;
+}
+
+.loginByText {
+    color: $pink;
+}
+.blueText {
+    color: $pink;
+}
+.eyeIcon {
+    color: $pink;
+}
+.eyeIconClosed {
+    color: $pink;
+}
+.text-blue {
+    color: $pink;
+}
+.ui.button {
+    color: $pink !important;
+}
+a {
+    color: $pink !important;
+}
+.bluek {
+    color: $pink;
+}
+.ui.modal > .content > .description {
+    .actions {
+        .ui.button {
+            &.active {
+                background-color: $pink !important;
+            }
+        }
+    }
+}
+.react-tabs__tab {
+    color: $pink;
+}
+.blueText {
+    color: $pink;
+}
+.blueArrow {
+    color: $pink;
+}
+.viewArrow {
+    color: $pink;
+}
+.viewMore {
+    color: $pink;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background-color: $pink !important;
+    background: $pink !important;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background: $pink !important;
+}
+.pageWrapper .loginboxWrapper .loginboxButton {
+    &:hover {
+        box-shadow: 0 0 0 3px $pink;
+    }
+}
+.pageWrapper .loginForm .forgetPassword {
+    color: $pink;
+}
+.gridItem {
+    &:hover {
+        border: 1px solid $pink;
+    }
+}
+.gridItem:hover {
+    border: 1px solid $pink;
+}
+
+.selectedGridItem {
+    border-color: $pink;
+}
+.eyeIcon {
+    color: $pink;
+}
+.eyeIconClose {
+    color: $pink;
+}
+.borderblue {
+    border: 3px solid $pink;
+}
+.readAgain {
+    color: $pink;
+}
+.exit {
+    color: $pink;
+}
+.levelMean {
+    color: $pink;
+}
+.inside-page-content.nogap {
+    background: $pink;
+}
+.border-blue {
+    border: 3px solid $pink;
+}
+.selected {
+    color: $pink;
+}
+.color-blue {
+    color: $pink;
+}
+.ui.vertical.menu .item > .label {
+    color: $pink !important;
+}
+.link-icon {
+    color: $pink;
+}
+.btn-link {
+    border: 2px solid $pink;
+}
+.btn-link.active {
+    background: $pink;
+}
+.bookButton {
+    &:not(.greyButton){
+        background-color: $pink;
+    }
+    path {
+        stroke: $pink;
+    }
+}
+.ps__thumb-y{
+    background-color:$pink !important;
+}
+
+::selection {
+    background-color: $pink;
+    color: $white;
+}

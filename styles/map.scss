@@ -1,0 +1,32 @@
+.level-text {
+    font-size: 56px;
+    font-family: $hekayaNormal;
+    color: $black;
+}
+.current-level-active {
+    transform: scale(1.4);
+    transform-origin: center;
+    transition: 0.3s;
+    transform-box: fill-box;
+}
+.level-wrapper {
+    cursor: pointer;
+    z-index: 1000;
+}
+.map {
+    margin-left: -2vw;
+    margin-right: -2vw;
+}
+.map-block {
+    border-radius: 20px;
+    background: #ffffff;
+}
+.map-svg {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.mapstabsp {
+    gap: 10px !important;
+}

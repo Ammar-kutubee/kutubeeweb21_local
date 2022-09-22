@@ -1,0 +1,750 @@
+.yellowText {
+    font-family: $hekayaLight;
+    font-size: 3.85vw;
+    color: $yellow;
+}
+.yellowTextlevel {
+    font-family: $hekayaLight !important;
+    font-size: 3vw !important;
+    color: $yellow !important;
+}
+.yellow {
+    color: $yellow !important;
+}
+.text {
+    font-family: $hekayaLight;
+    font-size: 24px;
+    color: $grey;
+}
+.textBlack {
+    color: $black;
+}
+.languageButtonsWrapper {
+    cursor: pointer;
+}
+
+.languageButton {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 50px;
+    border-width: 1px;
+    border-color: $secondaryGrey;
+    background-color: $white;
+    display: flex;
+    width: 25vw;
+    position: relative;
+    border-style: solid;
+    margin: 15px;
+    &:hover {
+        border-color: $blue;
+        box-shadow: 0 0 0 3px $blue;
+    }
+}
+.languageButtontext {
+    font-family: $hekayaLight;
+    font-size: 1.9vw;
+    color: $grey;
+    padding: 15px;
+}
+.letters {
+    // height: 64px;
+    width: 4.2vw;
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    right: auto;
+}
+
+.flex-text-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 3px;
+}
+
+.flex-text {
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    strong {
+        color: $black;
+        padding-right: 3px;
+        padding-left: 3px;
+    }
+}
+.lettersRight {
+    right: 15px;
+    left: auto;
+}
+.bg-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.btn-noborderradius {
+    border-radius: 0px;
+}
+.buttonWrapper {
+    border-radius: 50px;
+    height: 3vw;
+    justify-content: center;
+    align-items: center;
+    background-color: $blue;
+    display: flex;
+    cursor: pointer;
+}
+.buttonWrapperDisabled {
+    background-color: $btngrey !important;
+    cursor: not-allowed;
+}
+
+.textStyle {
+    font-family: $hekayaLight;
+    color: $white;
+    font-size: 1.9vw;
+}
+.margin-btn {
+    margin-top: 2.5vw;
+    margin-bottom: 1.5vw;
+}
+.loginByWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    display: flex;
+}
+.loginByButton {
+    align-items: center;
+    cursor: pointer;
+}
+.loginByText {
+    font-family: $sfSemibold, $tMedium;
+    font-size: 14px;
+    color: $blue;
+}
+.greyText {
+    color: $grey;
+    font-family: $sfSemibold;
+}
+.blueText {
+    color: $blue;
+    font-family: $sfSemibold, $tMedium;
+}
+
+.textInputWrapper {
+    height: 40px;
+    width: 100%;
+    // background-color: $grey4;
+    border-radius: 4px;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 2vw;
+    position: relative;
+    // input{
+    //     position: relative;
+    //     z-index: 2;
+    // }
+}
+.messageErrorText {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 3px;
+    color: $red;
+    font-family: $sfRegular, $tMedium;
+}
+.input-ic {
+    position: absolute;
+    left: 10px;
+    color: $grey;
+}
+
+.textInputError {
+    width: 100%;
+    height: 100%;
+    border-color: $red;
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4px;
+    pointer-events: none;
+}
+.icon {
+    font-size: 15px;
+    color: $grey;
+    margin-left: 15px;
+}
+.iconError {
+    color: $red;
+}
+.input {
+    flex-grow: 1;
+    padding-left: 12px;
+    color: $grey;
+    font-size: 14px;
+    font-family: $sfRegular, $tMedium;
+}
+.inputError {
+    color: $red;
+}
+.eyeIcon {
+    color: $blue;
+    font-size: 17px;
+}
+.eyeIconClosed {
+    color: $blue;
+    font-size: 15px;
+}
+
+input {
+    border: 1px solid $secondaryGrey;
+    width: 100%;
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    height: 40px;
+    width: 100%;
+    background-color: $grey4;
+    border-radius: 4px;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    padding-inline-start: 30px;
+}
+.btn-wrapper-login-width {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+}
+.btn-textStyle {
+    font-family: $hekayaLight;
+    font-size: 1.9vw;
+    text-align: center;
+
+    color: $white;
+}
+.fullwidth {
+    width: 100%;
+}
+.flex-wrapper-row {
+    display: flex;
+    flex-direction: row;
+}
+.flex-wrapper-col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-end {
+    justify-content: flex-end;
+}
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+.align-center {
+    align-items: center;
+}
+.text-blue {
+    font-family: $hekayaLight;
+    font-size: 1.9vw;
+    color: $blue;
+}
+
+body,
+html,
+#__next {
+    height: 100%;
+    line-height: inherit !important;
+}
+.sectionTitle {
+    color: $black;
+    font-family: $hekayaLight;
+    font-size: 2.5vw;
+    padding-bottom: 20px;
+}
+.ui.button {
+    background-color: #fff !important;
+    color: $blue !important;
+}
+.border-bottom {
+    border-bottom: 1px solid $secondaryGrey;
+}
+.sticky-top {
+    top: 6vw;
+    position: sticky;
+    z-index: 100;
+    background: white;
+    border-bottom: 1px solid $secondaryGrey;
+    margin-bottom: 15px;
+    margin-top: -1vw;
+}
+.ui.checkbox .box:before,
+.ui.checkbox label:before {
+    border-radius: 10px !important;
+}
+
+.rotate-level {
+    transform: rotate(-90deg);
+}
+.rtlDir {
+    direction: rtl;
+}
+.ltrDir {
+    direction: ltr;
+}
+a {
+    color: $blue !important;
+    text-decoration: none;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.rotate-arrow {
+    transform: rotate(180deg);
+    margin-top: 5px;
+    margin-right: 5px;
+}
+.bluek {
+    color: $blue;
+}
+.ui.grid .six.wide.column {
+    position: relative;
+}
+.header-search {
+    .ui.button {
+        font-size: 14px;
+        position: absolute;
+        z-index: 100;
+        right: 3.2vw;
+        background-color: transparent !important;
+        padding: 0px;
+        /* left: 0; */
+        /* margin: auto; */
+        // padding: 12px 5px;
+    }
+    .ui.search {
+        input {
+            padding: 0.2vw 2vw !important;
+        }
+    }
+}
+.ui.search .search.icon {
+    display: none !important;
+}
+.ui.modal > .header:not(.ui) {
+    font-weight: unset !important;
+    position: relative;
+}
+.ui.modal > .header .button {
+    bottom: 25%;
+    right: 0;
+    position: absolute;
+    top: auto;
+}
+.ui.checkbox label,
+.ui.checkbox + label {
+    font-size: 18px !important;
+    font-family: $sfLight, $tMedium;
+    font-weight: unset !important;
+    color: $grey !important;
+}
+.levels-checkboxes .gap {
+    gap: 2vw;
+}
+.ui.modal > .content > .description {
+    padding: 0px !important;
+
+    .levels-checkboxes,
+    .genres-checkboxes,
+    .subject-items {
+        padding: 0px 3vw;
+    }
+
+    .actions {
+        padding: 0px;
+
+        width: 100%;
+        .ui.button {
+            background-color: $secondaryGrey !important;
+            width: 40%;
+            height: 50px;
+            margin: 0px;
+            color: $white !important;
+            font-size: 2.5vw;
+            font-family: $hekayaLight;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: normal !important;
+            margin: auto;
+            border-radius: 30px;
+            // margin-bottom: 30px !important;
+            bottom: 30px;
+            &.active {
+                background-color: $blue !important;
+            }
+        }
+    }
+}
+.ui.modal .scrolling.content {
+    padding: 0px;
+}
+.chip {
+    border-width: 1px;
+    border-color: $secondaryGrey;
+    border-radius: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    flex-direction: row;
+    align-items: center;
+    border-style: solid;
+    display: flex;
+}
+.chipText {
+    font-size: 14px;
+    font-family: $sfSemibold, $tMedium;
+    padding-inline-end: 15px;
+    color: $grey;
+}
+.deleteIcon {
+    font-size: 12px;
+    color: $blue;
+}
+.icon-filters {
+    font-size: 1.2vw;
+}
+.rtlDir {
+    .sectionTitle {
+        text-align: right;
+    }
+}
+.ltrDir {
+    .sectionTitle {
+        text-align: left;
+    }
+}
+.ltrDir.sectionTitle {
+    text-align: left;
+}
+.rtlDir.sectionTitle {
+    text-align: right;
+}
+.actions.rtlDir .button {
+    left: 0;
+    right: auto;
+}
+.rtlDir.ui.modal > .header {
+    border: 0px;
+
+    .button {
+        left: 0;
+        right: auto !important;
+    }
+}
+.levelmodal.ui.modal .scrolling.content,
+.ratingsmodal.ui.modal .scrolling.content {
+    padding: 1.5rem;
+    .description {
+        font-family: $sfSemibold, $tMedium;
+        font-size: 20px;
+        &.rtlDir {
+            text-align: right;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.right-link {
+    cursor: pointer;
+}
+.viewMore {
+    color: $blue;
+    font-family: $sfSemibold, $tMedium;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+input {
+    font-family: $sfRegular, $tMedium !important;
+    font-size: 14px;
+}
+.eye {
+    position: absolute;
+    right: 10px;
+}
+// .ps__rail-y{
+//     z-index:1000;
+// }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition-delay: 9999s;
+    -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+    transition-delay: 9999s;
+    transition: color 9999s ease-out, background-color 9999s ease-out;
+}
+
+input {
+    filter: none;
+}
+.ui.floating.message {
+    background: $white;
+    position: fixed;
+    right: 1vw;
+    bottom: 2vw;
+    color: $blue;
+    font-size: 1.5vw;
+    font-family: $hekayaLight;
+    padding: 1vw;
+    z-index: 1500;
+}
+.sidebar {
+    width: 25%;
+}
+
+.sectionTitle {
+    color: $black;
+    font-family: $hekayaLight;
+    font-size: 1.9vw;
+}
+.chipsWrapper {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.9vw;
+    margin-bottom: 1.2vw;
+}
+.assignmentWrapper {
+    padding: 0px;
+    border-width: 1px;
+    border-color: $secondaryGrey;
+    border-radius: 6px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    display: flex;
+    border-style: solid;
+}
+.bookCover {
+    width: 75px;
+    height: auto;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $secondaryGrey;
+}
+.rightInfoWrapper {
+    justify-content: space-between;
+    flex: 1;
+    align-items: flex-end;
+    padding: 5px;
+    padding-inline-start: 0;
+
+    // paddingRight:0
+}
+.assignmentInfoWrapper {
+    flex-grow: 1;
+    flex: 1;
+    padding-inline-start: 9px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+}
+.teacherData {
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    flex-grow: 0.3;
+}
+.teacherAvatar {
+    height: 34px;
+    width: 34px;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+.teacherName {
+    font-size: 14px;
+    // fontWeight:'bold',
+    font-family: $sfSemibold;
+    color: $grey;
+}
+.description {
+    font-size: 14px;
+    color: $grey;
+    font-family: $sfRegular;
+}
+.dueDate {
+    color: $green;
+    font-size: 14px;
+    font-family: $sfSemibold;
+    text-align: center;
+    text-transform: capitalize;
+}
+.dueDateTitle {
+    color: $thirdGrey;
+    font-size: 12px;
+    font-family: $sfRegular;
+    text-align: center;
+}
+.viewText {
+    color: $blue;
+    font-size: 12px;
+    padding-inline-end: 4px;
+    font-family: $sfSemibold;
+}
+
+.notificationBadgePoints {
+    color: $white;
+    font-family: $hekayaLight;
+    position: absolute;
+    top: 16px;
+    left: 25px;
+    font-size: 14px;
+}
+.notificationBadgePointsNumber {
+    color: $white;
+    font-family: $hekayaLight;
+    position: absolute;
+    top: 16px;
+    // left:mScale(23),
+    width: 75px;
+    text-align: center;
+    font-size: 35px;
+}
+.notificationWrapper {
+    padding: 10px;
+    flex-direction: row;
+    display: flex;
+    border-bottom-width: 1px;
+    border-bottom-color: $secondaryGrey;
+    border-style: solid;
+    color: $white;
+}
+.notificationTitle {
+    color: $black;
+    font-family: $hekayaLight;
+    font-size: 24px;
+}
+.textGrey {
+    color: $grey;
+}
+.notificationDate {
+    color: $grey;
+    font-family: $sfRegular;
+    font-size: 12px;
+}
+.ui.right.push.sidebar {
+    width: 25% !important;
+}
+.sidemenu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    bottom: 0;
+}
+
+// .ui.search .result:last-child .label {
+//     color: $blue !important;
+// }
+.ui.search .result[name="More"] .label {
+    color: $blue !important;
+}
+.ui.search .result[name="المزيد"] .label {
+    color: $blue !important;
+}
+.backto {
+    font-family: $sfLight, $tMedium;
+    color: $blue;
+    font-size: 18px;
+    margin-top: 2vw;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+.whitebtn .buttonWrapper {
+    background: $white;
+    border: 1px solid $blue;
+
+    .btn-textStyle {
+        color: $blue;
+    }
+}
+.btn-link-solid {
+    border-radius: 50px;
+    height: 3vw;
+    -moz-box-pack: center;
+    justify-content: center;
+    -moz-box-align: center;
+    align-items: center;
+    background-color: $blue;
+    display: -moz-box;
+    display: flex;
+    cursor: pointer;
+    font-family: FFHekaya-Light;
+    font-size: 1.9vw;
+    text-align: center;
+    color: $white;
+}
+.yellow-number {
+    font-family: $hekayaLight;
+    font-size: 3.4vw;
+    color: $yellow;
+}
+
+.redbadge {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: $red;
+    width: 31px;
+    height: 31px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: $hekayaLight;
+    font-size: 30px;
+}
+.text {
+    font-family: $hekayaLight;
+    font-size: 24px;
+    color: $grey;
+    margin-bottom: 0.5vw;
+}
+
+@media only screen and (max-width: 1366px) {
+    .pageWrapper .boxWrapper {
+        height: 90vh;
+    }
+    .pageWrapper .loginboxWrapper {
+        padding-top: 6vh;
+    }
+}
+
+.filterModal .actions {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0px 0px 10px 2px rgb(37 39 38 / 5%);
+    padding: 10px !important;
+}

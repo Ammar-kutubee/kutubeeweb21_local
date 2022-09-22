@@ -1,0 +1,380 @@
+.inside-page-content {
+    flex-grow: 1;
+    display: flex;
+    padding-top: 6vw;
+    gap: 2vw;
+    padding-inline-end: 2vw;
+    position: relative;
+    main {
+        height: 100%;
+        flex-grow: 1;
+        padding-bottom: 60px;
+    }
+}
+.level-tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 100px;
+    padding: 10px 0px;
+    margin: 0;
+    flex-grow: 1;
+    padding-bottom: 0px;
+}
+.react-tabs__tab {
+    padding: 0px !important;
+    // border-bottom: 1px solid $secondaryGrey;
+
+    font-family: $sfRegular, $tMedium;
+    font-size: 1.6vw;
+    color: $blue;
+    font-weight: normal;
+    margin: 0px;
+    text-align: center;
+    padding: 5px 50px !important;
+    &.active-tab {
+        color: $grey !important;
+
+        border-bottom: 3px solid $grey;
+    }
+}
+
+.react-tabs__tab:focus {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 0px;
+    // border-bottom: 3px solid $secondaryGrey !important;
+
+    outline: none !important;
+}
+.bookSectionTitle {
+    font-family: $hekayaLight;
+    font-size: 1.9vw;
+    color: $black;
+    margin-bottom: 10px;
+}
+.inside-cats {
+    .gridwrapper {
+        grid-gap: 1%;
+        gap: 1%;
+
+        .gridWrapperShadow {
+            width: 186px;
+            // .gridItem {
+            //     height: 85px;
+            // }
+            .categoryTitle {
+                font-size: 1.4vw;
+            }
+        }
+    }
+}
+
+.chipsWrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.gap {
+    gap: 0.5vw;
+}
+.textWrapper {
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.leftWrapper {
+    .mainTitle {
+        flex-grow: 0;
+    }
+    // width: 65%;
+}
+.rightWrapper {
+    // width: 35%;
+    justify-content: center;
+}
+.smallText {
+    font-size: 1.9vw;
+    color: $black;
+    font-family: $hekayaLight;
+}
+.bigText {
+    font-size: 3.8vw;
+    line-height: 1;
+    color: $black;
+    font-family: FFHekaya-Light;
+    margin-top: -1.5vw;
+}
+.blueText {
+    color: $blue;
+    font-size: 26px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+.levelButton {
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+.blueArrow {
+    color: $blue;
+    font-size: 24px;
+}
+.viewArrow {
+    color: $blue;
+    font-size: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+.mainTitle {
+    font-size: 2.5vw;
+    font-family: $hekayaLight;
+    color: $black;
+    flex-grow: 1;
+}
+.mainNumber {
+    font-size: 3.8vw;
+    font-family: FFHekaya-Light;
+    color: #f1c100;
+    text-align: center;
+    margin-right: 5px;
+    line-height: normal;
+}
+.graphTextWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.numberOfCompletedBooks {
+    color: $green;
+    font-size: 35px;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    font-family: $sfSemibold;
+    width: 100%;
+}
+.completedOfText {
+    color: $grey;
+    font-size: 16px;
+    text-align: center;
+    font-family: $sfRegular;
+}
+.completedOfTextBig {
+    color: $grey;
+    font-size: 18px;
+    text-align: center;
+    font-family: $sfSemibold;
+}
+.arabicText {
+    font-family: $tMedium;
+}
+.lockedText {
+    font-size: 1.9vw;
+    text-align: center;
+    color: $grey;
+    font-family: $hekayaLight;
+    margin-top: 10px;
+}
+.ui.search > .results > .message .header {
+    font-family: $sfRegular !important;
+    font-size: 18px !important;
+    color: $grey !important;
+    font-weight: 400 !important;
+}
+.ui.search > .results .result .label {
+    font-family: $sfRegular, $tMedium;
+    font-size: 18px;
+    color: $grey;
+    font-weight: 400 !important;
+}
+.ui.icon.input > input {
+    font-family: $sfRegular, $tMedium;
+}
+.section-title {
+    font-family: $hekayaLight;
+    font-size: 2.5vw;
+    color: $black;
+    margin-top: 48px;
+    margin-bottom: 18px;
+}
+.ui.label {
+    font-weight: 400 !important;
+}
+.teacherData {
+    flex-direction: row;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    flex-grow: 0.3;
+}
+.dataTitle {
+    font-size: 14px;
+    font-family: $sfRegular, $tMedium;
+    color: $thirdGrey;
+    margin-bottom: 10px;
+}
+.teacherAvatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    margin-right: 5px;
+    border-width: 1px;
+    border-style: solid;
+    object-fit: contain;
+}
+.teacherName {
+    font-size: 14px;
+    // fontWeight:'bold',
+    font-family: $sfSemibold, $tMedium;
+    color: $grey;
+    padding-inline-start: 9px;
+}
+.dueDate {
+    color: $green;
+    font-size: 18px;
+    font-family: $sfSemibold, $tMedium;
+}
+.semiBoldText {
+    color: $grey;
+    font-size: 18px;
+    font-family: $sfSemibold, $tMedium;
+    // textAlign:'center',
+    // textTransform:'lowercase'
+    // fontFamily:theme.fonts.hekayaNormal
+}
+.mainTitleNew {
+    font-size:24px;
+}
+.dataWrapper {
+    margin-top: 30px;
+}
+.ui.segment[class*="bottom attached"] {
+    border: 0px !important;
+}
+.rtlDir .bookWrapper .typeText {
+    margin-right: 3px;
+    margin-left: 0px;
+}
+.rtlDir .ui.checkbox input[type="checkbox"],
+.rtlDir .ui.checkbox input[type="radio"] {
+    right: 0px;
+    left: auto !important;
+}
+.ltrDir .ui.checkbox input[type="checkbox"],
+.ltrDir .ui.checkbox input[type="radio"] {
+    left: 0px !important;
+    right: auto !important;
+}
+.rtlDir .ui.checkbox .box:before,
+.rtlDir .ui.checkbox label:before {
+    right: 0px;
+    left: auto !important;
+}
+
+.ltrDir .ui.checkbox .box:before,
+.ltrDir .ui.checkbox label:before {
+    left: 0px !important;
+    right: auto !important;
+}
+.rtlDir .ui.checkbox label {
+    padding-left: 0px !important;
+}
+.ltrDir .ui.checkbox label {
+    padding-inline-start: 1.85714em !important;
+}
+.ui.checkbox .box,
+.ui.checkbox label {
+    padding-inline-start: 1.85714em !important;
+}
+.rtlDir .ui.radio.checkbox .box:after,
+.rtlDir .ui.radio.checkbox label:after,
+.rtlDir .ui.checkbox .box:after,
+.rtlDir .ui.checkbox label:after {
+    right: 0px;
+    left: auto !important;
+}
+
+.ltrDir .ui.radio.checkbox .box:after,
+.ltrDir .ui.radio.checkbox label:after,
+.ltrDir .ui.checkbox .box:after,
+.ltrDir .ui.checkbox label:after {
+    left: 0px !important;
+    right: auto !important;
+}
+.ui.checkbox input:checked ~ .box:after,
+.ui.checkbox input:checked ~ label:after {
+    color: #fff !important;
+    border-color: $secondaryGrey;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background: $blue !important;
+    background-color: $blue !important;
+}
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    color: #fff !important;
+}
+.ui.checkbox.radio input:checked ~ .box:before,
+.ui.checkbox.radio input:checked ~ label:before {
+    background: $white !important;
+}
+.ui.modal {
+    .wrapperStyle {
+        margin-top: 0vw;
+    }
+
+    .gridwrapper {
+        grid-gap: 1%;
+        gap: 1%;
+        .gridWrapperShadow {
+            width: 23%;
+            grid-gap: 2%;
+            gap: 2%;
+            margin-bottom: 2vw;
+        }
+    }
+    .rtlDir .categoryTitle {
+        text-align: right;
+    }
+}
+.icon-filters {
+    font-size: 1.6rem !important;
+}
+.icon-info {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.rightalign {
+    input {
+        text-align: right !important;
+    }
+    .results {
+        text-align: right !important;
+    }
+}
+.errormsg {
+    color: $red;
+    font-family: $sfRegular, $tMedium;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 0.5vw;
+}

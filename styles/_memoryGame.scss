@@ -1,0 +1,32 @@
+.MemoryGame {
+	max-width: 860px;
+	margin: 40px auto;
+	font-family: 'FF Hekaya Light';
+}
+
+.MemoryGame button {
+	background: none;
+	border: none;
+	padding: 6px 12px;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 1em;
+}
+
+#back {
+	position: absolute;
+	left: 3.75%;
+	right: 95%;
+	top: 6.33%;
+	bottom: 91.67%;
+}
+
+.cards-grid {
+	margin: auto;
+	margin-top: 100px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 20px;
+	border: 10px sold rgb(0, 0, 0);
+	border-radius: 10px;
+}

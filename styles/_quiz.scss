@@ -1,0 +1,267 @@
+.numberOfQuestionsWrapper {
+    flex-direction: row;
+    height: 75px;
+    max-height: 75px;
+    display: flex;
+}
+.questionNumberBox {
+    background-color: $white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    // borderWidth:1,
+    border-color: $secondaryGrey;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    display: flex;
+    box-shadow: 0px 0px 10px 2px rgb(37 39 38 / 5%);
+    &.border-blue {
+        border: 3px solid $blue;
+        transform: scale(1.3);
+    }
+    
+}
+.questionNumberBoxText {
+    font-family: $hekayaLight;
+    font-size: 2.5vw;
+
+    // color:theme.colors.grey,
+}
+.numberOfQuestionsLine {
+    height: 3px;
+    width: 100%;
+    background-color: $yellow;
+    position: absolute;
+    top: 49%;
+    left: 0;
+    right: 0;
+}
+.container {
+    padding: 20px 0px 20px 0px;
+}
+.questionWrapper {
+    flex-grow: 1;
+}
+
+.questionTitle {
+    font-size: 1.6vw;
+    // lineHeight: mScale(40),
+    color: $black;
+    //font-family: $hekayaLight;
+    flex-shrink: 1;
+    margin-top: 15px;
+    justify-content: center;
+    font-family: $tMedium;
+    letter-spacing: 0px;
+}
+.rtlDir > .questionWrapper .questionTitle {
+    font-size: 1.9vw;
+
+    font-family: "adobe-arabic";
+    letter-spacing: 0px;
+}
+.questionTitleWrapper {
+    // paddingHorizontal:mScale(10)
+    width: 100%;
+}
+
+.audioButton {
+    margin-top: 25px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+}
+.answersWrapper {
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+.answerswrapperimages {
+    // flexDirection:'row',
+    // flexWrap:'wrap',
+    // flexShrink:1
+}
+.answerWrapper {
+    flex-direction: row;
+    margin: 10px;
+    align-items: center;
+    display: flex;
+    margin-top: 30px;
+}
+
+.textAnswerNumber {
+    color: $grey;
+    font-family: $hekayaLight;
+    font-size: 1.9vw;
+    line-height: 1.9vw;
+    width: 25px;
+    // flexShrink:1
+}
+
+.rtlDir > .questionWrapper .textAnswerNumber {
+    direction: ltr;
+    padding-left: 10px;
+    // font-family: "adobe-arabic";
+}
+.textAnswerNumberArabic {
+    color: $grey;
+    font-family: $hekayaLight;
+    font-size: 1.9vw;
+    line-height: 1.9vw;
+    width: 25px;
+    background-color: red;
+}
+.textAnswerBox {
+    flex-grow: 1;
+    border-radius: 9px;
+    padding: 10px;
+    background-color: $white;
+    border-width: 1px;
+    border-color: $secondaryGrey;
+    border-style: solid;
+    // marginLeft:mScale(15)
+}
+.textAnswerBoxHighlight {
+    background-color: #f7f1d9;
+}
+.textAnswerBoxBorder {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 9px;
+    border-width: 1px;
+    border-color: $secondaryGrey;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.answerBoxShadow {
+    flex-grow: 1;
+
+    box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.047476);
+    position: relative;
+
+    // border-radius: 8px;
+}
+.textAnswerText {
+    color: $grey;
+   // font-family: $hekayaLight;
+   font-family: $tMedium;
+
+    font-size: 1.4vw;
+    // lineHeight:mScale(36),
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    flex-shrink: 1;
+    // flex: 0.999
+}
+
+.rtlDir > .questionWrapper .textAnswerText {
+    font-family: "adobe-arabic";
+    font-size: 1.9vw;
+}
+.blackText {
+    color: $black;
+    font-family: $hekayaLight;
+    font-size: 1.9vw;
+    text-align: center;
+}
+.redText {
+    color: $red;
+    // fontFamily: theme.fonts.hekayaLight,
+    font-size: 3.8vw;
+    text-align: center;
+}
+.yellowText {
+    color: $yellow;
+    font-family: $hekayaLight;
+    font-size: 3.8vw;
+    text-align: center;
+}
+.greenText {
+    color: $green;
+    // fontFamily: theme.fonts.hekayaLight,
+    font-size: 1.9vw;
+    text-align: center;
+}
+.qnwrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
+    z-index: 10;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.line-wrapper {
+    position: relative;
+}
+.btn-wrapper-quiz-width {
+    width: 33%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.border-blue {
+    border: 3px solid $blue;
+}
+.selected {
+    color: $blue;
+}
+.bordergrey {
+    border: 3px solid $secondaryGrey;
+}
+.backblu {
+}
+.color-blue {
+    color: $blue;
+    transform: scale(1.3);
+}
+.color-grey {
+    color: $grey;
+}
+
+.color-white {
+    color: $white;
+}
+.true-green {
+    color: $green !important;
+}
+
+.false-red {
+    color: $red !important;
+}
+
+.true-green-border {
+    border: 3px solid $green !important;
+}
+.false-red-border {
+    border: 3px solid $red !important;
+}
+.backgblue {
+    background: #6ac3db;
+}
+.answersWrapperImages {
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    .answerWrapper {
+        width: 15vw;
+        height: 15vw;
+
+        .answerBoxShadow {
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .textAnswerBox {
+            border: 0px;
+        }
+    }
+}

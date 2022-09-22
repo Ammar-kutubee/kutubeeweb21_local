@@ -1,0 +1,128 @@
+.finalAvatar {
+    margin-top: calc(20px + 1vw);
+    width: 100%;
+    height: 40vh;
+    margin-bottom: calc(20px + 1vw);
+}
+
+.buttonList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vw;
+    width: 100%;
+    margin-bottom: calc(30px + 1vw);
+}
+.vectorBtn {
+    cursor: pointer;
+    border: 1px solid;
+    width: 190px !important;
+    display: flex;
+    height: 130px;
+    position: relative;
+    &.locked {
+        cursor: default;
+        opacity: 0.75;
+    }
+}
+.colorPaletteBtn .vectorBtn {
+    display: flex;
+    height: 50px;
+    width: 50px !important;
+}
+.avatar-tabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 0px;
+    margin: 0;
+    flex-grow: 1;
+    padding-bottom: 0px;
+    .react-tabs__tab {
+        padding: 10px 10px !important;
+    }
+}
+
+.colorPaletteBtn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+    width: 100%;
+    margin-bottom: calc(20px + 1vw);
+}
+#final-image,
+#final-avatars,
+#final-avatar-head,
+#final-image-head {
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.btn-wrapper-avatar-width .buttonWrapper {
+    width: 100%;
+}
+.save {
+    display: flex;
+    justify-content: flex-end;
+    
+    color: $blue;
+    font-size: 18px;
+    font-family: $sfRegular, $tMedium;
+    cursor: pointer;
+    margin:0 15px;
+    margin-top: 2vw;
+}
+.avatarsvg {
+    cursor: pointer;
+}
+
+.itempoints {
+    position: absolute;
+    bottom: 0;
+    background: $thirdGrey;
+    width: 100%;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    color: $white;
+    font-family: $hekayaLight;
+    font-size: 18px;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.purplepoints {
+    color: #b27fb7;
+    text-align: center;
+}
+.pointsmodal {
+    padding: 20px;
+    .header {
+        border: 0px;
+    }
+    .description {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 25px 0px;
+    }
+    .pointsModaldescription {
+        font-family: $hekayaLight;
+        font-size: 1.9vw;
+        color: $grey;
+        margin-top: 25px;
+    }
+}
+
+.avatar-tab-text{
+    font-size: 14px;
+    font-family: $sfSemibold, $tMedium;
+}

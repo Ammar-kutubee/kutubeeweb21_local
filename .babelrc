@@ -1,0 +1,16 @@
+{
+	"presets": ["next/babel"],
+	"env": {
+		"production": {
+			"plugins": ["transform-remove-console"]
+		}
+	}
+}
+
+// no longer needed
+
+// "loader": "babel-loader",
+// "exclude": "/node_modules/",
+// "query": {
+//     "presets": ["es2015"]
+// },

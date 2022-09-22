@@ -1,0 +1,791 @@
+#book-reader-page {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    .additions-number {
+        position: absolute;
+        top: 25px;
+        right: 2vw;
+        background-color: white;
+        border-radius: 50px;
+        font-family: $sfRegular, $tMedium;
+        color: $blue;
+        font-size: 18px;
+        border: solid 1px $blue;
+        padding: 5px 20px;
+        cursor: pointer;
+    }
+    #book-iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        &.zoom-enabled {
+            pointer-events: none;
+        }
+    }
+    .book-wrapper {
+        width: 100%;
+        height: calc(100% - 79px);
+        position: relative;
+        &.zoom-enabled {
+            .react-transform-component {
+                cursor: grab;
+                &:active,
+                &:target {
+                    cursor: grabbing;
+                }
+            }
+        }
+        // padding-bottom: 94px;
+        .iframe-scale-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .book-menu {
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        width: 100%;
+        height: 75px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .bookMenuIconsWrapper {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            // backgroundColor: theme.colors.white,
+        }
+        .menuButtonLandscape {
+            height: 52px;
+            width: 52px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            border-width: 1px;
+            border-style: solid;
+            margin: 0 10px;
+            display: flex;
+            box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.2);
+            cursor: pointer;
+            &.selected {
+                border-color: $blue;
+                border-width: 2px;
+            }
+        }
+        .fillBlue {
+            fill: $blue;
+        }
+    }
+
+    .zoom-menu {
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        width: 100%;
+        height: 75px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2vw;
+        .bookMenuIconsWrapper {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            // backgroundColor: theme.colors.white,
+        }
+        .menuButtonLandscape {
+            height: 52px;
+            width: 52px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            border-width: 1px;
+            border-style: solid;
+            margin: 0 10px;
+            display: flex;
+            box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.2);
+            cursor: pointer;
+            &.selected {
+                border-color: $blue;
+                border-width: 2px;
+            }
+        }
+        .fillBlue {
+            fill: $blue;
+        }
+        .zoom-icon {
+            cursor: pointer;
+        }
+        .go-back-tools {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            left: 25px;
+            top: 0;
+            height: 100%;
+            position: absolute;
+            cursor: pointer;
+            color: $blue;
+            font-family: $sfRegular, $tMedium;
+            font-size: 18px;
+            .icon-right-arrow {
+                font-size: 25px;
+
+                transform: rotate(180deg);
+                margin-right: 25px;
+            }
+        }
+    }
+
+    .recording-menu {
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        width: 100%;
+        height: 75px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 2vw;
+        .startRecordButton {
+            height: 45px;
+            width: 45px;
+            padding: 5px;
+            border-radius: 50px;
+            border-color: $red;
+            border-width: 2px;
+            border-style: solid;
+            cursor: pointer;
+            position: relative;
+        }
+        .startRecordButtonCircle {
+            width: 100%;
+            height: 100%;
+            background-color: $red;
+            border-radius: 50px;
+            position: relative;
+        }
+        .start-recording-text {
+            color: $red;
+
+            position: absolute;
+            left: calc(100% + 15px);
+            top: 10px;
+            font-size: 16px;
+            width:250px;
+            font-family: $sfMedium, $tMedium;
+        }
+        .recordingPauseButton1 {
+            height: 60px;
+            width: 60px;
+            padding: 7px;
+            border-radius: 50px;
+            position: absolute;
+            top: -13px;
+            left: -13px;
+            background-color: $red;
+            opacity: 0.1;
+        }
+        .recordingPauseButton2 {
+            height: 50px;
+            width: 50px;
+            padding: 7px;
+            border-radius: 50px;
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            background-color: $red;
+            opacity: 0.3;
+        }
+        .pauseButtonWrapperLandscape {
+            position: relative;
+            margin: 0 35px;
+        }
+        .continueRecordButtonLandscape {
+            position: relative;
+            margin: 0 30px;
+        }
+        .pauseRecordButtonCircle {
+            width: 35px;
+            height: 35px;
+            background-color: $red;
+            border-radius: 50px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .stopRecordButtonIcon {
+            width: 100%;
+            height: 100%;
+            color: $blue;
+            border-radius: 1;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $blue;
+            border-radius: 2px;
+        }
+        .stopRecordButton {
+            height: 50px;
+            width: 50px;
+            padding: 12px;
+            border-radius: 50px;
+            border-color: $blue;
+            border-width: 2px;
+            border-style: solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .currentTimeWrapper {
+            width: 50px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .currentTimeText {
+            font-family: $sfSemibold;
+            color: $blue;
+            font-size: 14px;
+        }
+        .pauseIcon {
+            color: $white;
+            font-size: 15px;
+            position: relative;
+            z-index: 5;
+        }
+        .go-back-tools {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            left: 25px;
+            top: 0;
+            height: 100%;
+            position: absolute;
+            cursor: pointer;
+            color: $blue;
+            font-family: $sfRegular, $tMedium;
+            font-size: 18px;
+            .icon-right-arrow {
+                font-size: 25px;
+
+                transform: rotate(180deg);
+                margin-right: 25px;
+            }
+        }
+
+        .playerPlayIconWrapper {
+            width: 40px;
+            height: 40px;
+            background-color: $blue;
+            border-radius: 50px;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            display: flex;
+            position: relative;
+        }
+        .playerPlayIcon {
+            color: $white;
+            font-size: 17px;
+        }
+        .playerProgressWrapper {
+            flex-grow: 1;
+            height: 8px;
+            background-color: #ebebeb;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            position: relative;
+        }
+        .playerProgress {
+            background-color: $blue;
+            height: 100%;
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+            width: 0px;
+            position: relative;
+        }
+        .playerProgressThumb {
+            width: 18px;
+            height: 18px;
+            top: -4.5px;
+            background-color: $blue;
+            position: absolute;
+            border-radius: 50px;
+            margin-left: -18px;
+            z-index: 1;
+        }
+        .playerSideButtons {
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+
+            // right: 25px;
+            top: 0;
+            height: 100%;
+            margin-left: 35px;
+            // position: absolute;
+        }
+        .playSideButton {
+            color: $blue;
+            font-size: 25px;
+            margin-left: 23px;
+            cursor: pointer;
+            &.icon-share {
+                &.shared {
+                    color: $grey;
+                }
+            }
+        }
+    }
+
+    .iframe-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        flex-grow: 1;
+    }
+    .prev-page {
+        height: 47px;
+        width: 47px;
+        background-color: #fff;
+        color: $blue;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        border: solid 2px $blue;
+        cursor: pointer;
+    }
+    .next-page {
+        height: 47px;
+        width: 47px;
+        background-color: #fff;
+        color: $blue;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        border: solid 2px $blue;
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+    .back-icon {
+        height: 35px;
+        width: 35px;
+        background-color: #fff;
+        color: $blue;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15;
+        border: solid 2px $blue;
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+    .bookProgressBarWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(4px);
+        position: relative;
+        z-index: 101;
+        .bookProgressContainerLandscape {
+            width: 85%;
+            height: 4px;
+            background-color: $progressGrey;
+            border-radius: 50px;
+            align-self: center;
+        }
+        .bookProgress {
+            width: 0;
+            height: 4px;
+            background-color: $green;
+            border-radius: 50px;
+        }
+    }
+    .react-transform-wrapper,
+    .react-transform-component {
+        width: 100%;
+        height: 100%;
+    }
+
+    .horizontal-slider {
+        width: 25vw;
+        margin-inline-end: 1vw;
+        margin-inline-start: 0.5vw;
+        .slider-track {
+            height: 5px;
+            background-color: #979797;
+        }
+        .slider-mark {
+            height: 14px;
+            background-color: #979797;
+            width: 5px;
+            top: -5px;
+            border-radius: 5px;
+            &:last-child {
+                transform: translateY();
+            }
+        }
+        .slider-thumb {
+            height: 30px;
+            width: 30px;
+            background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+            border-radius: 15px;
+            top: -13px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            transform: translateX(10px);
+            cursor: grab;
+            outline: none;
+            transition: 0.3s ease all;
+            .current-zoom-number {
+                position: absolute;
+                bottom: calc(100% + 0px);
+                width: 20px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                font-family: $sfRegular;
+                font-size: 17px;
+                color: $grey;
+            }
+        }
+        .slider-track-1 {
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 10px;
+                width: 30px;
+                background-color: white;
+                pointer-events: none;
+                content: "";
+            }
+        }
+    }
+    .playForMe {
+        height: 50px;
+        width: 50px;
+        background-color: $blue;
+        border-radius: 50px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        cursor: pointer;
+    }
+    .selectionMenu {
+        height: 45px;
+        transform: translateY(10px);
+        position: absolute;
+        background-color: #fff;
+        border-width: 1px;
+        border-color: $secondaryGrey;
+        top: 0;
+        border-radius: 7px;
+        box-shadow: 0px 0px 4px #c4c4c4;
+        border: 1px solid #ebebeb;
+
+        .selectionMenuIconSplitter {
+            height: 27px;
+            width: 1px;
+            background-color: $secondaryGrey;
+        }
+        .selectionMenuArrow {
+            height: 10px;
+            width: 10px;
+            border-bottom-color: $secondaryGrey;
+            border-right-color: $secondaryGrey;
+            border-right-style: solid;
+            border-right-width: 1px;
+            position: absolute;
+
+            background-color: #fff;
+            transform: rotate(45deg);
+            bottom: -5px;
+            left: 45%;
+        }
+        .selectionMenuArrowTop {
+            height: 10px;
+            width: 10px;
+            border-bottom-color: $secondaryGrey;
+            border-bottom-width: 1px;
+            border-right-color: $secondaryGrey;
+            border-right-width: 1px;
+            position: absolute;
+
+            background-color: #fff;
+            transform: rotate(225deg);
+            top: -5px;
+            left: 45%;
+        }
+
+        .drawing-current-time {
+            height: 25px;
+            width: 35px;
+            padding: 2px;
+            margin: 0 10px;
+            font-family: $sfRegular, $tMedium;
+            color: $grey;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+        .icon-remove {
+            color: $blue;
+        }
+        .share-icon-wrapper {
+            height: 30px;
+            width: 30px;
+            padding: 6px;
+            margin: 0 10px;
+            border-color: $blue;
+            justify-content: center;
+            .icon-share {
+                color: $blue;
+                &.shared {
+                    color: $grey;
+                }
+            }
+        }
+        .icon-remove {
+            color: $blue;
+        }
+        .play-icon-wrapper {
+            color: $blue;
+            // border:$blue solid 1px;
+        }
+        .selectionMenuIconSplitter {
+            height: 27px;
+            width: 1px;
+            background-color: $secondaryGrey;
+        }
+        .stopRecordButtonIcon {
+            width: 100%;
+            height: 100%;
+            color: $red;
+            border-radius: 1;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .startRecordButtonCircle {
+            width: 100%;
+            height: 100%;
+            background-color: $red;
+            border-radius: 50px;
+        }
+        .stopRecordButton {
+            height: 25px;
+            width: 25px;
+            padding: 6px;
+            margin: 0 10px;
+            border-radius: 50px;
+            border-color: $red;
+            border-width: 2px;
+            border-style: solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+.addNote {
+    .add-note-text {
+        width: 100%;
+        border: none;
+        font-family: $sfRegular, $tMedium;
+        font-size: 18px;
+        padding: 0.5rem 1.5rem;
+        outline: none;
+    }
+    .buttons-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 7vw;
+        .buttonWrapper {
+            width: 45%;
+        }
+    }
+}
+
+.addVocabulary {
+    &.rtlDir {
+        .ui.modal {
+            text-align: right;
+        }
+    }
+}
+
+.addVocabulary.rtlDir {
+    .content {
+        text-align: right;
+        .title {
+            font-size: 24px;
+            font-family: $hekayaLight;
+            color: $black;
+        }
+        .vocabularyText {
+            font-size: 36px;
+            line-height: 40px;
+            font-family: $hekayaLight, $tMedium;
+            color: $black;
+            // textAlign:'left',
+            margin-bottom: 20px;
+        }
+        .textInputTitle {
+            font-size: 14px;
+            font-family: $sfRegular, $tMedium;
+            color: $grey;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        .textInputWrapper {
+            height: 55px;
+            input {
+                height: 55px;
+            }
+        }
+    }
+    .content {
+        padding-top: 0px !important;
+    }
+    .word-types {
+        display: flex;
+        .checkbox {
+            margin-inline-end: 15px;
+            label {
+                &::before {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 10px;
+                }
+                &::after {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}
+.bookFinished {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    .finish-buttons-wrapper {
+        display: flex;
+        gap: 1vw;
+        margin-top: 3vh;
+        .toLibrary {
+            .buttonWrapper {
+                background-color: white;
+                border: $blue solid 1.5px;
+                .btn-textStyle {
+                    color: $blue;
+                }
+            }
+        }
+        .buttonWrapper {
+            width: 25vw;
+        }
+    }
+    .blackText {
+        color: $black;
+        font-family: $hekayaLight;
+        font-size: 36px;
+        text-align: center;
+    }
+    .pointsText {
+        font-family: $hekayaLight;
+        font-size: 60px;
+        line-height: 60px;
+        margin-bottom: -5px;
+        color: $yellow;
+        text-align: center;
+        padding: 0 10px;
+    }
+    .blackPointsText {
+        font-family: $hekayaLight;
+        font-size: 36px;
+        color: $black;
+        text-align: center;
+    }
+}
+.bookFinishedWrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .addRateText  {
+        color: #000000 !important;
+        font-family: FFHekaya-Light;
+        font-size: 36px;
+        text-align: center;
+    }
+}
+
+.ui.fullscreen.modal.additions-modal {
+    left: auto !important;
+    width: 95% !important;
+    margin: auto !important;
+    height: 95% !important;
+    padding: 0;
+}
+.ui.fullscreen.scrolling.modal.additions-modal {
+    left: auto !important;
+}
+
+.additions-modal {
+    .sectionBoxTitle {
+        font-size: 18px;
+        font-family: $sfMedium, $tMedium;
+        color: $grey;
+        margin-bottom: 5px;
+    }
+    .sectionBoxValue {
+        font-size: 24px;
+        font-family: $sfMedium, $tMedium;
+        color: $grey;
+        margin-bottom: 25px;
+    }
+    .boxWrapper {
+        background-color: $white;
+        border-width: 1px;
+        border-color: $secondaryGrey;
+        border-radius: 6px;
+        padding: 50px;
+        border-style: solid;
+        box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.047476);
+    }
+    .level-tabs {
+        justify-content: center;
+    }
+    .rtlDir {
+        text-align: right;
+    }
+}

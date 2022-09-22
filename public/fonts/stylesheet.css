@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Adobe Arabic';
+    src: url('AdobeArabic-Regular.woff2') format('woff2'),
+        url('AdobeArabic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

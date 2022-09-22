@@ -1,0 +1,225 @@
+.viewText {
+    color: $purple;
+}
+.viewArrow.icon-right-arrow {
+    color: $purple;
+    font-size: 10px;
+    margin-top: 0px;
+}
+.inside-page-wrapper {
+    .blue-bg {
+        background: $purple;
+    }
+}
+.book-menu {
+    .menuButtonLandscape {
+        &.selected {
+            border-color: $purple;
+        }
+    }
+    .fillBlue {
+        fill: $purple;
+    }
+}
+.back-icon {
+    color: $purple;
+    border: solid 2px $purple;
+}
+.zoom-menu {
+    .menuButtonLandscape {
+        &.selected {
+            border-color: $purple;
+        }
+    }
+    .fillBlue {
+        fill: $purple;
+    }
+    .go-back-tools {
+        color: $purple;
+    }
+}
+.prev-page {
+    color: $purple;
+    border: solid 2px $purple;
+}
+.next-page {
+    color: $purple;
+    border: solid 2px $purple;
+}
+.back-icon {
+    color: $purple;
+    border: solid 2px $purple;
+}
+.playForMe {
+    background-color: $purple;
+}
+.numberOfRatings {
+    color: $purple;
+}
+.infoIcon {
+    color: $purple;
+}
+.addRateText {
+    color: $purple;
+}
+.closeIcon {
+    color: $purple;
+}
+.levelLibrary {
+    color: $purple;
+}
+.bookActivityNumber {
+    color: $purple;
+}
+.icon-share {
+    color: $purple;
+}
+.languageButton {
+    &:hover {
+        border-color: $purple;
+        box-shadow: 0 0 0 3px $purple;
+    }
+}
+.buttonWrapper {
+    background-color: $purple;
+}
+
+.loginByText {
+    color: $purple;
+}
+.blueText {
+    color: $purple;
+}
+.eyeIcon {
+    color: $purple;
+}
+.eyeIconClosed {
+    color: $purple;
+}
+.text-blue {
+    color: $purple;
+}
+.ui.button {
+    color: $purple !important;
+}
+a {
+    color: $purple !important;
+}
+.bluek {
+    color: $purple;
+}
+.ui.modal > .content > .description {
+    .actions {
+        .ui.button {
+            &.active {
+                background-color: $purple !important;
+            }
+        }
+    }
+}
+.react-tabs__tab {
+    color: $purple;
+}
+.blueText {
+    color: $purple;
+}
+.blueArrow {
+    color: $purple;
+}
+.viewArrow {
+    color: $purple;
+}
+.viewMore {
+    color: $purple;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background-color: $purple !important;
+    background: $purple !important;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background: $purple !important;
+}
+.pageWrapper .loginboxWrapper .loginboxButton {
+    &:hover {
+        box-shadow: 0 0 0 3px $purple;
+    }
+}
+.pageWrapper .loginForm .forgetPassword {
+    color: $purple;
+}
+.gridItem {
+    &:hover {
+        border: 1px solid $purple;
+    }
+}
+.gridItem:hover {
+    border: 1px solid $purple;
+}
+
+.selectedGridItem {
+    border-color: $purple;
+}
+.eyeIcon {
+    color: $purple;
+}
+.eyeIconClose {
+    color: $purple;
+}
+.borderblue {
+    border: 3px solid $purple;
+}
+.readAgain {
+    color: $purple;
+}
+.exit {
+    color: $purple;
+}
+.levelMean {
+    color: $purple;
+}
+.inside-page-content.nogap {
+    background: $purple;
+}
+.border-blue {
+    border: 3px solid $purple;
+}
+.selected {
+    color: $purple;
+}
+.color-blue {
+    color: $purple;
+}
+.ui.vertical.menu .item > .label {
+    color: $purple !important;
+}
+.link-icon {
+    color: $purple;
+}
+.btn-link {
+    border: 2px solid $purple;
+}
+.btn-link.active {
+    background: $purple;
+}
+.bookButton {
+    &:not(.greyButton){
+        background-color: $purple;
+    }
+    path {
+        stroke: $purple;
+    }
+}
+.ps__thumb-y{
+    background-color:$purple !important;
+}
+
+::selection {
+    background-color: $purple;
+    color: $white;
+}

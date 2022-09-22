@@ -1,0 +1,222 @@
+.inside-page-content.nogap {
+    gap: 0vw;
+    background: $blue;
+}
+.profile-wrapper {
+    padding-left: 2vw;
+}
+.section-titleblack {
+    font-size: 2.5vw;
+    font-family: $hekayaLight;
+    color: $black;
+}
+.black-text.studentname {
+    font-family: $sfSemibold, $tMedium;
+    font-size: 22px;
+    color: $black;
+}
+.grey-text.studentemail {
+    font-family: $sfRegular, $tMedium;
+    font-size: 18px;
+    color: $black;
+}
+.black-text {
+    font-family: $sfSemibold, $tMedium;
+    font-size: 22px;
+    color: $black;
+}
+.grey-text {
+    font-family: $sfRegular, $tMedium;
+    font-size: 18px;
+    color: $black;
+}
+.info-wrapper {
+    background: $white;
+    border: 1px solid $secondaryGrey;
+    box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.047476);
+    border-radius: 16px;
+    margin-top: 3.8vw;
+    padding: 20px 30px;
+}
+/* language-background-box */
+.right-side-links {
+    justify-content: flex-end;
+    gap: 1.5vw;
+    align-items: center;
+    margin-top: 2vw;
+}
+.right-link {
+    gap: 0.5vw;
+    color: $white;
+    font-family: $sfSemibold, $tMedium;
+    font-size: 18px;
+}
+.badgeblock {
+    img {
+        max-width: 25% !important;
+    }
+}
+
+.smallblock {
+    height: 360px !important;
+}
+.accountlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    .accountitem {
+        background: $white;
+        border: 1px solid $secondaryGrey;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.047476);
+        border-radius: 16px;
+        width: 100%;
+        margin-bottom: 1vw;
+        height: 3.8vw;
+        display: flex;
+        align-items: center;
+        padding-inline-start: 20px;
+        font-family: $hekayaLight;
+        color: $grey;
+        font-size: 2.5vw;
+        position: relative;
+        .selectaccount {
+            position: absolute;
+            left: 0;
+            right: 0;
+            width: 100%;
+            border-radius: 16px;
+            height: 3.8vw;
+            border: 3px solid $blue;
+            box-shadow: none;
+        }
+    }
+}
+.leader-block-wrapper {
+    background: rgba(229, 229, 229, 0.3);
+    border: 1px solid $secondaryGrey;
+    border-radius: 10px;
+    margin-bottom: 1vw;
+}
+.leaderboarditem {
+    width: 100%;
+    // justify-content: space-between;
+    align-items: center;
+    padding: 1vw 0px;
+    border-bottom: 1px solid $secondaryGrey;
+    position: relative;
+    .me {
+        position: absolute;
+        background: rgba(106, 195, 219, 0.2);
+        width: calc(100% + 4vw);
+        height: 100%;
+        left: -2vw;
+        right: -2vw;
+    }
+
+    .you {
+        width: 3vw;
+        background: #ef781d;
+        border-bottom-right-radius: 16px;
+        font-family: $sfRegular, $tMedium;
+        font-size: 1.1vw;
+        color: $white;
+        padding: 1px 1px 1px 5px;
+    }
+    .rank {
+        font-family: $sfSemibold, $tMedium;
+        font-size: 1.15vw;
+        color: #6a6a6d;
+    }
+    .userData {
+        display: flex;
+        flex-direction: revert;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5vw;
+        .avatarData {
+            width: 60px;
+            height: 60px;
+            border: 1px solid $secondaryGrey;
+            border-radius: 50%;
+            object-position: top;
+        }
+        .name {
+            font-family: $sfSemibold, $tMedium;
+            font-size: 1.25vw;
+            color: #6a6a6d;
+        }
+    }
+    .lastbadge-leader {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+        z-index: 10;
+    }
+    .black-text-leader {
+        font-family: $hekayaLight;
+        font-size: 1.9vw;
+        color: $black;
+        margin-inline-end: 4vw;
+        width: 7vw;
+    }
+}
+.leader-tabs-page {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vw;
+    background: transparent;
+    width: 100%;
+    border: 0px;
+    margin-top: 2vw;
+    .userimg {
+        img {
+            background: #ffffff;
+            border: 3px solid rgba(106, 195, 219, 0.4);
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+    }
+}
+
+.leader-place {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .purpledigit {
+        font-family: $hekayaLight;
+        font-size: 3.8vw;
+        color: #b27fb7;
+        line-height: 2.4vw;
+    }
+    .grey-text {
+        line-height: 0.6;
+    }
+}
+.black-text-leader-top {
+    font-family: $hekayaLight;
+    font-size: 2vw;
+    color: $black;
+}
+.leader-yellow {
+    font-size: 2vw;
+}
+.profile-block {
+    padding-inline-start: 1vw;
+    .section-title {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
+.me.rtlDir {
+    .you {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 0px;
+        padding: 1px 5px 1px 1px;
+    }
+}

@@ -1,0 +1,25 @@
+.themewrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+
+    flex-direction: column;
+}
+.blue-theme {
+    @import "bluetheme";
+}
+.orange-theme {
+    @import "orangetheme";
+}
+.purple-theme {
+    @import "purpletheme";
+}
+.pink-theme {
+    @import "pinktheme";
+}
+.red-theme {
+    @import "redtheme";
+}
+.green-theme {
+    @import "greentheme";
+}

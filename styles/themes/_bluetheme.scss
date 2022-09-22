@@ -1,0 +1,226 @@
+.viewText {
+    color: $blue;
+}
+.viewArrow.icon-right-arrow {
+    color: $blue;
+    font-size: 10px;
+    margin-top: 0px;
+}
+.inside-page-wrapper {
+    .blue-bg {
+        background: $blue;
+    }
+}
+.book-menu {
+    .menuButtonLandscape {
+        &.selected {
+            border-color: $blue;
+        }
+    }
+    .fillBlue {
+        fill: $blue;
+    }
+}
+.back-icon {
+    color: $blue;
+    border: solid 2px $blue;
+}
+.zoom-menu {
+    .menuButtonLandscape {
+        &.selected {
+            border-color: $blue;
+        }
+    }
+    .fillBlue {
+        fill: $blue;
+    }
+    .go-back-tools {
+        color: $blue;
+    }
+}
+.prev-page {
+    color: $blue;
+    border: solid 2px $blue;
+}
+.next-page {
+    color: $blue;
+    border: solid 2px $blue;
+}
+.back-icon {
+    color: $blue;
+    border: solid 2px $blue;
+}
+.playForMe {
+    background-color: $blue;
+}
+.numberOfRatings {
+    color: $blue;
+}
+.infoIcon {
+    color: $blue;
+}
+.addRateText {
+    color: $blue;
+}
+.closeIcon {
+    color: $blue;
+}
+.levelLibrary {
+    color: $blue;
+}
+.bookActivityNumber {
+    color: $blue;
+}
+.icon-share {
+    color: $blue;
+}
+.languageButton {
+    &:hover {
+        border-color: $blue;
+        box-shadow: 0 0 0 3px $blue;
+    }
+}
+.buttonWrapper {
+    background-color: $blue;
+}
+
+.loginByText {
+    color: $blue;
+}
+.blueText {
+    color: $blue;
+}
+.eyeIcon {
+    color: $blue;
+}
+.eyeIconClosed {
+    color: $blue;
+}
+.text-blue {
+    color: $blue;
+}
+.ui.button {
+    color: $blue !important;
+}
+a {
+    color: $blue !important;
+}
+.bluek {
+    color: $blue;
+}
+.ui.modal > .content > .description {
+    .actions {
+        .ui.button {
+            &.active {
+                background-color: $blue !important;
+            }
+        }
+    }
+}
+.react-tabs__tab {
+    color: $blue;
+}
+.blueText {
+    color: $blue;
+}
+.blueArrow {
+    color: $blue;
+}
+.viewArrow {
+    color: $blue;
+}
+.viewMore {
+    color: $blue;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background-color: $blue !important;
+    background: $blue !important;
+}
+.ui.checkbox input:checked ~ .box:before,
+.ui.checkbox input:checked ~ label:before,
+.ui.radio.checkbox input:checked ~ .box:after,
+.ui.radio.checkbox input:checked ~ label:after {
+    background: $blue !important;
+}
+.pageWrapper .loginboxWrapper .loginboxButton {
+    &:hover {
+        box-shadow: 0 0 0 3px $blue;
+    }
+}
+.pageWrapper .loginForm .forgetPassword {
+    color: $blue;
+}
+.gridItem {
+    &:hover {
+        border: 1px solid $blue;
+    }
+}
+.gridItem:hover {
+    border: 1px solid $blue;
+}
+
+.selectedGridItem {
+    border-color: $blue;
+}
+.eyeIcon {
+    color: $blue;
+}
+.eyeIconClose {
+    color: $blue;
+}
+.borderblue {
+    border: 3px solid $blue;
+}
+.readAgain {
+    color: $blue;
+}
+.exit {
+    color: $blue;
+}
+.levelMean {
+    color: $blue;
+}
+.inside-page-content.nogap {
+    background: $blue;
+}
+.border-blue {
+    border: 3px solid $blue;
+}
+.selected {
+    color: $blue;
+}
+.color-blue {
+    color: $blue;
+}
+.ui.vertical.menu .item > .label {
+    color: $blue !important;
+}
+.link-icon {
+    color: $blue;
+}
+.btn-link {
+    border: 2px solid $blue;
+}
+.btn-link.active {
+    background: $blue;
+}
+.bookButton {
+    &:not(.greyButton){
+        background-color: $blue;
+    }
+    
+    path {
+        stroke: $blue;
+    }
+}
+.ps__thumb-y {
+    background-color: $blue !important;
+}
+
+::selection {
+    background-color: $blue;
+    color: $white;
+}
