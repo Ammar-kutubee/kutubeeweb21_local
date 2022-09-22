@@ -165,7 +165,7 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 	}, [allMatched]);
 
 	return (
-		<div className='MemoryGame' style={{ display: 'flex', flexDirection: 'column' }}>
+		<div className='MemoryGame'>
 			<button onClick={() => playAudio()}>
 				<img src='/audio.svg' alt='audio svg' />
 			</button>

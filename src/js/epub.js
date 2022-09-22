@@ -2994,7 +2994,7 @@
 						assertPath(path);
 						if (path.length === 0) return '.';
 						var code = path.charCodeAt(0);
-						var hasRoot = code === 47 /*/*/;
+						var hasRoot = code === 47; /*/*/
 						var end = -1;
 						var matchedSlash = true;
 						for (var i = path.length - 1; i >= 1; --i) {
@@ -3150,7 +3150,7 @@
 						var ret = { root: '', dir: '', base: '', ext: '', name: '' };
 						if (path.length === 0) return ret;
 						var code = path.charCodeAt(0);
-						var isAbsolute = code === 47 /*/*/;
+						var isAbsolute = code === 47; /*/*/
 						var start;
 						if (isAbsolute) {
 							ret.root = '/';
