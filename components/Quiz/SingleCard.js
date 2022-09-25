@@ -21,9 +21,9 @@ export default function SignleCard({ card, handleChoice, flipped, disabled, fade
 					src='/yellowQ(1).jpg'
 					onClick={hadnleClick}
 					alt='❔'
-					style={{ height: 160, width: 160 }}
+					style={{ height: 14vw, width: 14vw }}
 				/> */}
-				<p className='backOfCard preload-images' onClick={hadnleClick} style={{ height: 240, width: 240 }}>
+				<p className='backOfCard preload-images' onClick={hadnleClick} style={{ height: '14vw', width: '14vw' }}>
 					?
 				</p>
 			</div>

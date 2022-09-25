@@ -26,6 +26,7 @@ export default function ImageAnswer({
 			>
 				{currentLanguage == 'ar' ? '.' + (index + 1) : index + 1 + '.'}
 			</div>
+
 			<div className='answerBoxShadow'>
 				<div className={`textAnswerBox ${highlight ? 'textAnswerBoxHighlight' : ''}`}>
 					<img

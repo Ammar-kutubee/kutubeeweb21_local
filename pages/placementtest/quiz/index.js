@@ -30,6 +30,7 @@ const PlacementQuiz = () => {
 	const [currentLanguage, setCurrentLanguage] = useState();
 	const [placementData, setPlacementData] = useState([]);
 	const dispatch = useDispatch();
+
 	useEffect(async () => {
 		if (stateplacementData) {
 			setPlacementData(stateplacementData.questions);
@@ -89,6 +90,7 @@ const PlacementQuiz = () => {
 		//     setCurrentSelectedAnswer(null)
 		// }, 1000);
 	};
+
 	const checkAnswer = () => {
 		let answer = quizData[currentQuestion].answers[currentSelectedAnswer];
 		let answersTmp = allAnswers;

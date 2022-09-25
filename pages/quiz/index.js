@@ -199,7 +199,7 @@ const Quiz = () => {
 			// 	return true;
 			// }
 			// return false;
-		} else if (quizData.quizData[currentQuestion].questionType === 'open') {
+		} else if (quizData.quizData?.[currentQuestion].questionType === 'open') {
 			let answersTmp = allAnswers;
 			let currentSelectedAnswer = 0;
 
