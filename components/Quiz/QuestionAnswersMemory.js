@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 // import { render } from 'react-dom';
-import { useNavigate, Link } from 'react-router-dom';
+// import { useNavigate, Link } from 'react-router-dom';
 
 import SingleCard from './SingleCard.js';
 
-import TextAnswer from './TextAnswer';
-import ImageAnswer from './ImageAnswer';
+// import TextAnswer from './TextAnswer';
+// import ImageAnswer from './ImageAnswer';
 
 function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionCheck }) {
 	console.log('ansssweers', answers);
@@ -166,7 +166,7 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 
 	return (
 		<div className='MemoryGame'>
-			<button onClick={() => playAudio()}>
+			<button classname='AudioButton' onClick={() => playAudio()}>
 				<img src='/audio.svg' alt='audio svg' />
 			</button>
 

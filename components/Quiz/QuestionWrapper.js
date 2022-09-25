@@ -25,6 +25,7 @@ export default function QuestionWrapper({
 	onQuestionCheck,
 }) {
 	// const [selectedAnswer, setSelectedAnswer] = useState(null)
+	console.log(currentLanguage);
 	console.log('QD', questionData);
 	const questionAudiosRef = useRef(null);
 	let answersAudios = [];
@@ -171,7 +172,9 @@ export default function QuestionWrapper({
 					selectedAnswer={currentSelectedAnswer}
 					onSelectAnswer={onSelectAnswer}
 					answers={questionData.answers}
-					answersType={questionData.answerType}
+					// answersType={questionData.answerType}
+					questionTypee={questionData.questionType}
+					placeHolderr={questionData.name}
 				/>
 			)}
 		</div>

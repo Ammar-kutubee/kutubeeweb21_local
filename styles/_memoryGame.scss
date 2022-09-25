@@ -2,6 +2,9 @@
 	max-width: 860px;
 	margin: 40px auto;
 	font-family: 'FF Hekaya Light';
+	// font-family: 'FFHekaya';
+
+	// font-family: theme.fonts.hekayaNormal;
 }
 
 .MemoryGame button {
@@ -13,7 +16,11 @@
 	font-size: 1em;
 }
 
+.AudioButon {
+}
+
 #back {
+	//TODO make it dynamic ?? check with design
 	position: absolute;
 	left: 3.75%;
 	right: 95%;
@@ -24,12 +31,12 @@
 .cards-grid {
 	// style={{ display: 'flex', flexDirection: 'column' }} removed
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 10px;
 	display: grid;
 	justify-content: center;
 	align-content: center;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-gap: 20px;
+	grid-gap: 3vh;
 	border: 10px sold rgb(0, 0, 0);
 	border-radius: 10px;
 }

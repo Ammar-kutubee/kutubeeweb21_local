@@ -26,8 +26,9 @@ const Assignmnet = ({ userId }) => {
 	const booksWrapper = useRef(null);
 	const { t, i18n } = useTranslation([], { useSuspense: false });
 	const resize = useWindowSize();
-	const dispatch = useDispatch();
-	const language = i18n.language;
+
+	const dispatch = useDispatch(); // not used
+	const language = i18n.language; // not used but chk line27
 
 	useEffect(() => {
 		if (booksWrapper.current) {
