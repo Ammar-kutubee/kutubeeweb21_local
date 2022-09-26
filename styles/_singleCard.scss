@@ -1,6 +1,7 @@
 .card {
 	position: relative;
 	cursor: pointer;
+	margin-top: 16px;
 }
 
 .card img {
@@ -15,7 +16,8 @@
 /* setting the front(pic side) as absolute position */
 .card .frontOfCard {
 	transform: rotateY(90deg);
-	transition: all ease-in 0.25s;
+	transition: all ease-in 0.3s;
+	transform-style: preserve-3d;
 	position: absolute;
 	/* border: 3px solid #86CF0E; */
 	box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.047476);
@@ -24,18 +26,20 @@
 
 .flipped .frontOfCard {
 	transform: rotateY(0deg);
+	transform-style: preserve-3d;
 	/* opacity: 0.5; */
 
 	border: 3px solid #e52730;
 	box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.047476);
 	border-radius: 8px;
 
-	transition-delay: 0.25s;
+	transition-delay: 0.3s;
 }
 
 .card .backOfCard {
-	transition: all ease-in 0.25s;
-	transition-delay: 0.25s;
+	transition: all ease-in 0.3s;
+	transition-delay: 0.3s;
+	transform-style: preserve-3d;
 	border: 1px solid #e5e5e5;
 	box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.047476);
 	border-radius: 8px;
@@ -59,6 +63,7 @@
 
 .flipped .backOfCard {
 	transform: rotateY(90deg);
+	transform-style: preserve-3d;
 	border: 1px solid #e5e5e5;
 	box-shadow: 0px 0px 10px 2px rgba(37, 39, 38, 0.047476);
 	border-radius: 8px;

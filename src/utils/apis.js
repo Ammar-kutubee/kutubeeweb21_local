@@ -4,6 +4,7 @@ import axios from 'axios';
 export const getBookData = async (bookId, userId) => {
 	var promise = new Promise((resolve, reject) => {
 		const formData = new FormData();
+
 		formData.append('id', bookId);
 		formData.append('uid', userId);
 
@@ -11,7 +12,6 @@ export const getBookData = async (bookId, userId) => {
 			resolve(res.data[0]);
 		});
 	});
-
 	return promise;
 };
 
@@ -26,7 +26,6 @@ export const getBookProgress = async (uid, bookId) => {
 			resolve(res.data);
 		});
 	});
-
 	return promise;
 };
 export const getUpdateUserDataCode = async (code, dispatch) => {
@@ -1261,9 +1260,9 @@ export const getUserNotifications = async (uid) => {
 export const getLockedAssets = (uid, gender, avatarType) => {
 	var promise = new Promise((resolve, reject) => {
 		const formData2 = new FormData();
+
 		formData2.append('avatarType', avatarType);
 		formData2.append('gender', gender);
-
 		formData2.append('uid', uid);
 
 		axios.post('https://school.kutubee.com:4000/user/avatar/getAssets', formData2).then(async (res) => {

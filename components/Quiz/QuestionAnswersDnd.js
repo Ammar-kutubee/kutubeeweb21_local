@@ -27,8 +27,32 @@ import ImageAnswer from './ImageAnswer';
 // import arrayMove from 'array-move';  // do we need it here?
 
 const SortableItem = sortableElement(({ value, props, index, index2 }) => {
-	// console.log("props.currentLanguage",index2)
-	return (
+	console.log('props.currentLanguage', index2);
+	console.log('1111', value);
+
+	console.log('2222', props); //
+
+	console.log('3333', index); //undefined
+	// console.log(sortableContainer);
+
+	return props.answerType == 'image' ? (
+		<ImageAnswer
+			currentLanguage={props.currentLanguage}
+			// highlight={props.playedAnswerAudio == index}
+			highlight={props.playedAnswerAudio == index2}
+			hideRightAnswer={props.hideRightAnswer}
+			selectedAnswerData={props.selectedAnswerData}
+			// selected={props.selectedAnswer == index}
+			selected={props.selectedAnswer == index2}
+			// answer={answer}
+			answer={value}
+			// index={index} // will give Nan to numbering
+
+			index={index2}
+			onSelectAnswer={props.onSelectAnswer}
+			currentSelectedAnswer={props.currentSelectedAnswer}
+		/>
+	) : (
 		<TextAnswer
 			correctDndtAnswers={props.correctDndtAnswers}
 			currentLanguage={props.currentLanguage}
@@ -90,15 +114,67 @@ function QuestionDnd(props) {
 	};
 
 	return (
-		<SortableContainer onSortEnd={onSortEnd}>
+		<SortableContainer onSortEnd={onSortEnd} axis='y'>
+			<div style={{ display: 'flex', gap: '19px', marginTop: 46, alignItems: 'center', justifyContent: 'center' }}>
+				{props.answers?.map((ele) => {
+					return (
+						<div
+							className='DndText'
+							style={{
+								width: 136,
+								height: 60,
+								boxSizing: 'border-box',
+								border: ' 1px solid #E5E5E5',
+								boxShadow: ' 0px 0px 10px 2px rgba(37, 39, 38, 0.047476)',
+								borderRadius: 8,
+								fontFamily: 'FF Hekaya ',
+								fontSize: '48px',
+								textAlign: 'center',
+								lineHeight: '49px',
+							}}
+						>
+							{ele?.nameText}
+						</div>
+					);
+				})}
+			</div>
 			{items.map((answer, index) => {
-				// if (answerType == 'image') {
-				//     return sortableElement(<ImageAnswer currentLanguage={currentLanguage} highlight={playedAnswerAudio == index} hideRightAnswer={hideRightAnswer} selectedAnswerData={selectedAnswerData} selected={selectedAnswer == index} answer={answer} index={index} onSelectAnswer={onSelectAnswer} currentSelectedAnswer={currentSelectedAnswer} />)
+				// if (props.answerType == 'image') {
+				// 	return sortableElement(
+				// 		<ImageAnswer
+				// 			currentLanguage={props.currentLanguage}
+				// 			highlight={props.playedAnswerAudio == index}
+				// 			hideRightAnswer={props.hideRightAnswer}
+				// 			selectedAnswerData={props.selectedAnswerData}
+				// 			selected={props.selectedAnswer == index}
+				// 			answer={answer}
+				// 			index={index}
+				// 			onSelectAnswer={props.onSelectAnswer}
+				// 			currentSelectedAnswer={props.currentSelectedAnswer}
+				// 		/>
+				// 	);
 				// } else {
-				// return sortableElement(<TextAnswer currentLanguage={props.currentLanguage} highlight={props.playedAnswerAudio == index} hideRightAnswer={props.hideRightAnswer} selectedAnswerData={props.selectedAnswerData} selected={props.selectedAnswer == index} answer={answer} index={index} onSelectAnswer={props.onSelectAnswer} currentSelectedAnswer={props.currentSelectedAnswer} />)
+				// 	return sortableElement(
+				// 		<TextAnswer
+				// 			currentLanguage={props.currentLanguage}
+				// 			highlight={props.playedAnswerAudio == index}
+				// 			hideRightAnswer={props.hideRightAnswer}
+				// 			selectedAnswerData={props.selectedAnswerData}
+				// 			selected={props.selectedAnswer == index}
+				// 			answer={answer}
+				// 			index={index}
+				// 			onSelectAnswer={props.onSelectAnswer}
+				// 			currentSelectedAnswer={props.currentSelectedAnswer}
+				// 		/>
+				// 	);
 				// }
 
-				return <SortableItem key={`item-${index}`} props={props} index={index} index2={index} value={answer} />;
+				return (
+					<div>
+						<SortableItem className='DndImgs' key={`item-${index}`} props={props} index={index} index2={index} value={answer} />
+						<div style={{ boxSizing: 'border-box', width: 194, height: 50, border: '1px dashed #B1B1B1' }}></div>
+					</div>
+				);
 			})}
 		</SortableContainer>
 	);

@@ -7,17 +7,15 @@ import SingleCard from './SingleCard.js';
 // import TextAnswer from './TextAnswer';
 // import ImageAnswer from './ImageAnswer';
 
-function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionCheck }) {
+function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionCheck, questionTagg }) {
 	console.log('ansssweers', answers);
 	console.log('selectedAnswerData', selectedAnswerData);
 	// console.log('propsss???', props);
 
-	// cardsImagesMapped=answers.map((ele)=>(ele.sr)) //keep in mind
-
 	const cardsImages = [];
 
 	answers &&
-		answers.map((answer) => {
+		answers?.map((answer) => {
 			let obj = {
 				src: answer.name || 'image not loaded check console',
 				matched: false,
@@ -166,9 +164,11 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 
 	return (
 		<div className='MemoryGame'>
+			{/* <div className='questionTitle'>{questionTagg}</div> */}
+			{/* 
 			<button classname='AudioButton' onClick={() => playAudio()}>
 				<img src='/audio.svg' alt='audio svg' />
-			</button>
+			</button> */}
 
 			{/* <button onClick={shuffle}>New Game</button> */}
 

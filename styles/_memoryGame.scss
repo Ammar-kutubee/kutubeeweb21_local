@@ -6,6 +6,9 @@
 
 	// font-family: theme.fonts.hekayaNormal;
 }
+.MemoryGame .questionTitle {
+	margin-top: 70px;
+}
 
 .MemoryGame button {
 	background: none;
@@ -31,7 +34,7 @@
 .cards-grid {
 	// style={{ display: 'flex', flexDirection: 'column' }} removed
 	margin: 0 auto;
-	margin-top: 10px;
+	margin-top: 22px;
 	display: grid;
 	justify-content: center;
 	align-content: center;
