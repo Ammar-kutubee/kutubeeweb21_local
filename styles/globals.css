@@ -14,24 +14,29 @@ a {
 * {
   box-sizing: border-box;
 }
+
 .message.empty {
   display: none;
 }
+
 .claff {
   background: url("/assets/images/new/icon.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin:0px 10px;
+  margin: 0px 10px;
   width: 40px;
 }
 
 .ui.checkbox.checkboxstyle label {
-  padding:0px 25px 20px 0px !important;
+  padding: 0px 25px 20px 0px !important;
 }
-.ui.checkbox.checkboxstyle .box:before, .ui.checkbox.checkboxstyle label:before {
+
+.ui.checkbox.checkboxstyle .box:before,
+.ui.checkbox.checkboxstyle label:before {
   border-radius: 0 !important;
 }
+
 /* .profile-block-lastbadge {
   max-width: 100%;
 } */

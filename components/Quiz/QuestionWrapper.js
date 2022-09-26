@@ -119,6 +119,7 @@ export default function QuestionWrapper({
 					//     opacity: 0,
 					// }}
 					className='questionTitle'
+					style={{ fontFamily: 'FF Hekaya' }}
 				>
 					{questionData.name}
 				</div>
@@ -126,7 +127,7 @@ export default function QuestionWrapper({
 			{/* {console.log('questionData', questionData.answerType)} */}
 			{/* {console.log("questionDatavvvvv",questionData.questionType === "drag_drop")} */}
 
-			{questionData.questionType === 'drag_drop' ? (
+			{questionData.questionType === 'drag_drop' || questionData.questionType === 'sorting' ? (
 				<QuestionAnswersDnd
 					correctDndtAnswers={correctDndtAnswers}
 					setUserOrder={setUserOrder}
@@ -140,6 +141,7 @@ export default function QuestionWrapper({
 					answers={questionData.answers}
 					answersType={questionData.answerType}
 					nextQuestion={nextQuestion}
+					questionTagg={questionData.name}
 				/>
 			) : questionData.questionType === 'memory_game' ? (
 				<QuestionAnswersMemory
@@ -158,6 +160,7 @@ export default function QuestionWrapper({
 					allMatched={allMatched}
 					nextQuestion={nextQuestion}
 					onQuestionCheck={onQuestionCheck}
+					questionTagg={questionData.name}
 				/>
 			) : (
 				<QuestionAnswers

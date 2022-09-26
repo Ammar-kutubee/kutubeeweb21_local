@@ -72,17 +72,27 @@ const Quiz = () => {
 			let nextQu = currentQuestion + 1;
 
 			if (quizData.quizData[nextQu].questionType === 'drag_drop') {
-				setDisableCheck(false);
-				setShowButton(true);
+				setTimeout(() => {
+					setDisableCheck(false);
+					setShowButton(true);
+				}, 1000);
 			} else if (quizData.quizData[nextQu].questionType === 'memory_game') {
 				// added to disable check button for  memory game where check button is not needed based on design
-				setShowButton(false);
+
+				setTimeout(() => {
+					setShowButton(false);
+				}, 1000);
 			} else if (quizData.quizData[nextQu].questionType === 'open') {
 				// TODO check if u can keep it in else with drag and drop also?
-				setShowButton(true);
+
+				setTimeout(() => {
+					setShowButton(true);
+				}, 1000);
 			} else {
-				setShowButton(true);
-				setDisableCheck(true);
+				setTimeout(() => {
+					setShowButton(true);
+					setDisableCheck(true);
+				}, 1000);
 			}
 			setQuestionAttempts(0);
 			setTimeout(() => {
