@@ -32,6 +32,7 @@
     "react": "17.0.2",
     "react-addons-css-transition-group": "^15.6.2",
     "react-audio-player": "^0.17.0",
+    "react-beautiful-dnd": "^13.1.1",
     "react-device-detect": "^1.17.0",
     "react-dom": "17.0.2",
     "react-facebook-login": "^4.1.1",
@@ -58,6 +59,7 @@
     "sass": "^1.36.0",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.3",
+    "uuid": "^9.0.0",
     "xmldom": "^0.6.0",
     "yarn": "^1.22.19"
   },

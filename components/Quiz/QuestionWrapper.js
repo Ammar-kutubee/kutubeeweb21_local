@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import QuestionAnswers from './QuestionAnswers';
 import QuestionAudios from './QuestionAudios';
 import QuestionAnswersDnd from './QuestionAnswersDnd';
-
+import QuestionAnswersSorting from './QuestionAnswersSorting';
 import QuestionAnswersMemory from './QuestionAnswersMemory';
 
 export default function QuestionWrapper({
@@ -127,7 +127,7 @@ export default function QuestionWrapper({
 			{/* {console.log('questionData', questionData.answerType)} */}
 			{/* {console.log("questionDatavvvvv",questionData.questionType === "drag_drop")} */}
 
-			{questionData.questionType === 'drag_drop' || questionData.questionType === 'sorting' ? (
+			{questionData.questionType === 'drag_drop' ? (
 				<QuestionAnswersDnd
 					correctDndtAnswers={correctDndtAnswers}
 					setUserOrder={setUserOrder}
@@ -160,6 +160,22 @@ export default function QuestionWrapper({
 					allMatched={allMatched}
 					nextQuestion={nextQuestion}
 					onQuestionCheck={onQuestionCheck}
+					questionTagg={questionData.name}
+				/>
+			) : questionData.questionType === 'sorting' ? (
+				<QuestionAnswersSorting
+					correctDndtAnswers={correctDndtAnswers}
+					setUserOrder={setUserOrder}
+					currentLanguage={currentLanguage}
+					answerType={questionData.answerType}
+					playedAnswerAudio={playedAnswerAudio}
+					hideRightAnswer={hideRightAnswer}
+					selectedAnswerData={selectedAnswerData}
+					selectedAnswer={currentSelectedAnswer}
+					onSelectAnswer={onSelectAnswer}
+					answers={questionData.answers}
+					answersType={questionData.answerType}
+					nextQuestion={nextQuestion}
 					questionTagg={questionData.name}
 				/>
 			) : (
