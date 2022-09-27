@@ -29,10 +29,11 @@ export default function ImageAnswer({
 
 			<div className='answerBoxShadow'>
 				<div className={`textAnswerBox ${highlight ? 'textAnswerBoxHighlight' : ''}`}>
+					{/* TODO change img tag to Next Image , chnage width and height also (* + dynamic) */}
 					<img
 						src={answer.name}
 						style={{
-							width: '100%',
+							width: '180px',
 							height: 'auto',
 							objectFit: 'contain',
 							margin: 'auto',
