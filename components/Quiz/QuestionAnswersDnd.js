@@ -1,11 +1,12 @@
-import { result } from 'lodash';
-import React, { useState } from 'react';
+// import { result } from 'lodash';
+import React, { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Image from 'next/image';
 import { v4 as uuid } from 'uuid';
 
 const onDragEnd = (result, columns, setColumns) => {
 	console.log('result', result);
+	console.log('colunmssss', columns);
 	if (!result.destination) return;
 	// if (result.destination.index !== 0) return;
 	console.log(1111111111, columns[result.destination.droppableId]);
@@ -55,78 +56,76 @@ const onDragEnd = (result, columns, setColumns) => {
 // }
 
 export default function QuestionAnswersDnd(props) {
-	console.log(props);
-	let itemsFromBackend = [
-		{
-			id: uuid(),
-			content: props.answers[0].nameText,
-		},
-		{
-			id: uuid(),
-			content: props.answers[1].nameText,
-		},
-	];
+	console.log('props', props);
 
-	itemsFromBackend = props.answers.map((ele) => {
+	// iterate through props to get the the the nameText and put them in Storage(conatainer holder) and build in the structure of beautiful dnd recom.
+	let itemsFromBackend = props.answers.map((ele) => {
 		return {
 			id: uuid(),
 			content: ele.nameText,
 		};
 	});
-	itemsFromBackend.push({
-		id: uuid(),
-		content: 'hi',
-	});
+	// itemsFromBackend.push({
+	// 	id: uuid(),
+	// 	content: 'hi',
+	// });
 
-	const columnsFromBackend = {
+	let columnsFromBackend = {
 		[uuid()]: {
 			name: 'Storage',
 			items: itemsFromBackend,
 		},
-		[uuid()]: {
-			name: 'Answers',
-			items: [],
-		},
-		[uuid()]: {
-			name: 'Answers',
-			items: [],
-		},
-		[uuid()]: {
-			name: 'Answers',
-			items: [],
-		},
-		[uuid()]: {
-			name: 'Answers',
-			items: [],
-		},
-		[uuid()]: {
-			name: 'Answers',
-			items: [],
-		},
 	};
 
-	// need to return object not array in columns
-	// columnsFromBackend = props.answers.map((elee) => {
-	// 	return {
-	// 		[uuid()]: {
-	// 			name: elee.name,
-	// 			items: itemsFromBackend,
-	// 		},
-	// 	};
-	// });
+	// iterate through props to get the the pic(name) and the the text , building it as the document of beutifull dnd recommended
+	props &&
+		props.answers.map((elee) => {
+			let objj = {
+				name: 'Answers',
+				items: [],
+				src: elee.name,
+				correctAnswer: elee.nameText,
+			};
+			columnsFromBackend[uuid()] = objj;
+		});
+
+	console.log('999999999999', columnsFromBackend);
 
 	const [columns, setColumns] = useState(columnsFromBackend);
+	const [ok, setOk] = useState(false);
 
+	const handleClick = (e) => {
+		// console.log('eee', e);
+	};
+
+	useEffect(() => {
+		let allAnswersFalse = true;
+		console.log('columns', Object.entries(columns));
+		Object.entries(columns).map(([id, column]) => {
+			if (column.name === 'Answers') {
+				if (column.items?.[0]?.content !== column.correctAnswer) {
+					allAnswersFalse = false;
+				}
+			}
+		});
+
+		setOk(allAnswersFalse);
+	}, [columns]);
+
+	useEffect(() => {
+		// onQuestionCheck();
+		if (ok) {
+			// onQuestionCheck();
+			props.setCheckingDndAns(ok);
+		} else console.log('else');
+		console.log('okkkkkkkk', ok);
+	}, [ok]);
 	return (
 		<div
 			className='dndGame'
 			style={{
 				display: 'grid',
 				gridTemplateColumns: "repeat(auto, '200px')",
-				// gridTemplateAreas: "				'storage' 				'b c d'  ",
-				// gridTemplateColumns: 'auto auto ',
-				// gridTemplateColumns: '1fr 1fr 1fr ',
-
 				alignItems: 'center',
 				justifyContent: 'center',
 				height: '100%',
@@ -147,8 +146,6 @@ export default function QuestionAnswersDnd(props) {
 						<div
 							className='Card'
 							style={{
-								// gridArea: `${column.id}`,
-								// gridColumn: `${column.id}`,
 								gridRow: 2,
 								height: 240,
 								width: 240,
@@ -161,20 +158,12 @@ export default function QuestionAnswersDnd(props) {
 							}}
 						>
 							<div style={{ borderRadius: '50%', overflow: 'hidden', width: '180px', height: '160px', userSelect: 'none' }}>
-								<Image
-									className='rounded-full'
-									draggable={false}
-									objectFit='cover'
-									src={props.answers?.[1].name}
-									height={160}
-									width={180}
-									alt='image'
-								/>
+								<Image className='rounded-full' draggable={false} objectFit='cover' src={column.src} height={160} width={180} alt='image' />
 							</div>
 
-							<Droppable droppableId={id} key={id}>
+							<Droppable droppableId={id} key={id} isDropDisabled={column.items.length !== 0}>
 								{(provided, snapshot) => {
-									console.log(provided, snapshot);
+									console.log('prov and snap', provided, snapshot);
 									return (
 										<div
 											className='dashedDroppInArea'
@@ -184,9 +173,10 @@ export default function QuestionAnswersDnd(props) {
 												background: snapshot.isDraggingOver ? 'lightgrey' : 'white',
 												padding: 4,
 												width: 194,
-												minHeight: 50,
+												height: 60,
 												marginTop: 10.15,
-												border: '1px dashed #B1B1B1',
+												border: column.items.length === 0 ? '2px dashed #B1B1B1' : '',
+												borderRadius: '8px',
 												display: 'flex',
 												flexDirection: 'column',
 												justifyContent: 'center',
@@ -211,15 +201,24 @@ export default function QuestionAnswersDnd(props) {
 																		margin: '4px 0 ',
 																		minHeight: '60px',
 																		maxHeight: '60px',
-																		width: '136px',
+																		width: column.items.length === 0 ? '136px' : 194,
 																		background: snapshot.isDragging ? 'pink' : 'white',
 																		color: 'grey',
-																		border: '1px solid #E5E5E5',
+																		border:
+																			column.items.length === 0
+																				? '2px solid #E5E5E5'
+																				: props.checkingDndAns
+																				? '3px solid #6AC3DB'
+																				: '3px solid #E52730',
 																		boxShadow: '0px 0px 10px 2px rgba(37, 39, 38, 0.047476)',
 																		borderRadius: 8,
 																		...provided.draggableProps.style,
 																		textAlign: 'center',
+																		// transition: '  0.4s',
+																		// transitionDelay: '1s',
+																		// transitionDuration: '1s',
 																	}}
+																	// onClick={handleClick} //TODO HANDLE CLICK FOR DRAGGABLE TO RETURN TO ORIGIN
 																>
 																	{item.content}
 																</div>
@@ -267,7 +266,7 @@ export default function QuestionAnswersDnd(props) {
 								ignoreContainerClipping={false}
 							>
 								{(provided, snapshot) => {
-									console.log(provided, snapshot);
+									// console.log(provided, snapshot);
 									return (
 										<div
 											className='storageDroppInArea'
@@ -290,7 +289,7 @@ export default function QuestionAnswersDnd(props) {
 										>
 											{column.items.map((item, index) => {
 												return (
-													<Draggable key={item.id} draggableId={item.id} index={index}>
+													<Draggable key={item.id} draggableId={item.id} index={index} onClick={handleClick}>
 														{(provided, snapshot) => {
 															console.log(222222, provided);
 															return (
@@ -309,7 +308,7 @@ export default function QuestionAnswersDnd(props) {
 																		width: '136px',
 																		background: snapshot.isDragging ? 'pink' : 'white',
 																		color: 'grey',
-																		border: '1px solid #E5E5E5',
+																		border: '1.5px solid #E5E5E5',
 																		boxShadow: '0px 0px 10px 2px rgba(37, 39, 38, 0.047476)',
 																		borderRadius: 8,
 																		...provided.draggableProps.style,
