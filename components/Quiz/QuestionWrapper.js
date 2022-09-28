@@ -23,6 +23,8 @@ export default function QuestionWrapper({
 	modalOpen,
 	nextQuestion,
 	onQuestionCheck,
+	checkingDndAns,
+	setCheckingDndAns,
 }) {
 	// const [selectedAnswer, setSelectedAnswer] = useState(null)
 	console.log(currentLanguage);
@@ -142,6 +144,8 @@ export default function QuestionWrapper({
 					answersType={questionData.answerType}
 					nextQuestion={nextQuestion}
 					questionTagg={questionData.name}
+					checkingDndAns={checkingDndAns}
+					setCheckingDndAns={setCheckingDndAns}
 				/>
 			) : questionData.questionType === 'memory_game' ? (
 				<QuestionAnswersMemory

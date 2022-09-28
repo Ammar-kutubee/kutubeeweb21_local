@@ -10,6 +10,7 @@ import QuizResult from '../../components/Quiz/QuizResult';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import GoogleLogin from 'react-google-login';
+import { fa } from 'faker/lib/locales';
 
 const Quiz = () => {
 	const state = useSelector((state) => state.mainReducer);
@@ -31,7 +32,10 @@ const Quiz = () => {
 	const [showButton, setShowButton] = useState(true);
 
 	// 21/sep added for memory game to go for next question
-	const [allMatched, setAllMatched] = useState(false);
+	// const [allMatched, setAllMatched] = useState(false);
+
+	//28/sep added for dnd game to check answers
+	const [checkingDndAns, setCheckingDndAns] = useState(false);
 
 	const router = useRouter();
 	const [bookId, setBookId] = useState(null);
@@ -130,7 +134,7 @@ const Quiz = () => {
 					setQuestionAttempts(questionAttempts + 1);
 
 					if (
-						quizData.quizData[currentQuestion].questionType === 'drag_drop' ||
+						quizData.quizData[currentQuestion].questionType === 'sorting' ||
 						quizData.quizData[currentQuestion].questionType === 'memory_game'
 					) {
 						setDisableCheck(true);
@@ -142,7 +146,7 @@ const Quiz = () => {
 						// setAllAnswers([...answersTmp])
 						// setCurrentSelectedAnswer(null)
 
-						if (quizData.quizData[currentQuestion].questionType === 'drag_drop') {
+						if (quizData.quizData[currentQuestion].questionType === 'sorting') {
 							setDisableCheck(false);
 						} else {
 							setSecondAttmept(true);
@@ -165,9 +169,9 @@ const Quiz = () => {
 		// }, 1000);
 	};
 
-	//TODO CHECK ANSWER FOR MEMORY GAME ( MAKE ELSE IF ?!) and go next questiom>
+	//TODO drag and drop game next que
 	const checkAnswer = () => {
-		if (quizData.quizData[currentQuestion].questionType === 'drag_drop') {
+		if (quizData.quizData[currentQuestion].questionType === 'sorting') {
 			let correctList = quizData.quizData[currentQuestion].correctList;
 			let userList = userOrder.map((item) => item.id);
 			let answer = false;
@@ -205,6 +209,26 @@ const Quiz = () => {
 			};
 			setAllAnswers([...answersTmp]);
 			return true;
+			// if (allMatched) {
+			// 	return true;
+			// }
+			// return false;
+		} else if (quizData.quizData[currentQuestion].questionType === 'drag_drop') {
+			let answersTmp = allAnswers;
+			let currentSelectedAnswer = 0;
+
+			answersTmp[currentQuestion] = {
+				correct: checkingDndAns,
+				answerId: undefined,
+				questionId: quizData.quizData?.[currentQuestion]?.id,
+			};
+			setAllAnswers([...answersTmp]);
+
+			if (checkingDndAns) {
+				return true;
+			}
+			return false;
+
 			// if (allMatched) {
 			// 	return true;
 			// }
@@ -269,6 +293,8 @@ const Quiz = () => {
 									questionData={quizData.quizData[currentQuestion]}
 									nextQuestion={nextQuestion}
 									onQuestionCheck={onQuestionCheck}
+									checkingDndAns={checkingDndAns}
+									setCheckingDndAns={setCheckingDndAns}
 								/>
 							) : (
 								<div style={{ flexGrow: 1 }} />
