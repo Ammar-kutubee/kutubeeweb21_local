@@ -2,7 +2,7 @@
 import React from 'react';
 // import './SignleCard.css';
 
-export default function SignleCard({ card, handleChoice, flipped, disabled, faded, isMatched }) {
+export default function SignleCard({ card, handleChoice, flipped, disabled, faded, isMatched, choiceTwo }) {
 	// console.log(disabled);
 	const hadnleClick = () => {
 		if (!disabled) {
@@ -12,7 +12,11 @@ export default function SignleCard({ card, handleChoice, flipped, disabled, fade
 
 	return (
 		<div className='card' key={card.id}>
-			<div className={`${flipped ? 'flipped' : ''} ${isMatched && faded ? 'faded' : ''}`}>
+			<div
+				className={`${flipped ? (choiceTwo !== null ? (!isMatched && !faded ? 'flippedWrong' : 'flipped') : 'flipped') : ''}  ${
+					isMatched ? 'faded' : ''
+				}`}
+			>
 				<img className='frontOfCard' src={card.src} alt='front Of Card <3' />
 
 				{/* in case you want to retrieve the old image */}

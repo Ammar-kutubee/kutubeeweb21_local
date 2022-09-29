@@ -36,6 +36,7 @@ const Quiz = () => {
 
 	//28/sep added for dnd game to check answers
 	const [checkingDndAns, setCheckingDndAns] = useState(false);
+	const [checkingPhase, setCheckingPhase] = useState(false);
 
 	const router = useRouter();
 	const [bookId, setBookId] = useState(null);
@@ -75,19 +76,19 @@ const Quiz = () => {
 		if (currentQuestion < quizData.quizData.length - 1) {
 			let nextQu = currentQuestion + 1;
 
-			if (quizData.quizData[nextQu].questionType === 'drag_drop') {
+			if (quizData.quizData[nextQu].questionType === 'sorting' || quizData.quizData[nextQu].questionType === 'drag_drop') {
 				setTimeout(() => {
 					setDisableCheck(false);
 					setShowButton(true);
 				}, 1000);
 			} else if (quizData.quizData[nextQu].questionType === 'memory_game') {
 				// added to disable check button for  memory game where check button is not needed based on design
-
 				setTimeout(() => {
 					setShowButton(false);
 				}, 1000);
 			} else if (quizData.quizData[nextQu].questionType === 'open') {
 				// TODO check if u can keep it in else with drag and drop also?
+				setDisableCheck(false);
 
 				setTimeout(() => {
 					setShowButton(true);
@@ -122,10 +123,20 @@ const Quiz = () => {
 		let correctAnswer = false;
 
 		if (questionAttempts == 0 || questionAttempts == 1) {
+			setTimeout(() => {
+				setCheckingPhase(false);
+				setDisableCheck(false);
+			}, 1000);
+			setCheckingPhase(true);
+			setDisableCheck(true);
+
 			correctAnswer = checkAnswer();
 			if (correctAnswer) {
-				setSecondAttmept(false);
-				nextQuestion();
+				setTimeout(() => {
+					setSecondAttmept(false);
+					setCheckingPhase(false);
+					nextQuestion();
+				}, 1000);
 			} else {
 				setCorrecDndtAnswers(false);
 				if (questionAttempts == 0) {
@@ -161,6 +172,8 @@ const Quiz = () => {
 			}
 			// checkAnswer()
 		}
+		// setCheckingPhase(false);
+
 		// setShowQuestion(false)
 		// setCurrentQuestion(currentQuestion + 1)
 		// setTimeout(() => {
@@ -225,14 +238,12 @@ const Quiz = () => {
 			setAllAnswers([...answersTmp]);
 
 			if (checkingDndAns) {
+				// setTimeout(() => {
+				// 	return true;
+				// }, 1000);
 				return true;
 			}
 			return false;
-
-			// if (allMatched) {
-			// 	return true;
-			// }
-			// return false;
 		} else if (quizData.quizData?.[currentQuestion].questionType === 'open') {
 			let answersTmp = allAnswers;
 			let currentSelectedAnswer = 0;
@@ -295,6 +306,7 @@ const Quiz = () => {
 									onQuestionCheck={onQuestionCheck}
 									checkingDndAns={checkingDndAns}
 									setCheckingDndAns={setCheckingDndAns}
+									checkingPhase={checkingPhase}
 								/>
 							) : (
 								<div style={{ flexGrow: 1 }} />

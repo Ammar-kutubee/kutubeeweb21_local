@@ -65,61 +65,38 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 	console.log('turns', turns);
 	const handleChoice = (card) => {
 		choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
-		// setDisabled(true);
-		// console.log('choiceOne', choiceOne);
-		// console.log('choiceTwo', choiceTwo);
 	};
 
 	useEffect(() => {
 		if (choiceOne && choiceTwo) {
 			setDisabled(true);
+
 			if (choiceOne.src === choiceTwo.src && choiceOne.id !== choiceTwo.id) {
 				console.log('thats a match yay :)');
 				setScore(score + 1);
+				setTimeout(() => {
+					setFaded(false);
+					setCards((prevCards) => {
+						return prevCards.map((card) => {
+							if (card.src === choiceOne.src) {
+								return { ...card, matched: true };
+							} else {
+								return card;
+							}
+						});
+					});
+					resetTurn();
+				}, 500);
 				setFaded(true);
 
-				setCards((prevCards) => {
-					return prevCards.map((card) => {
-						if (card.src === choiceOne.src) {
-							return { ...card, matched: true };
-						} else {
-							return card;
-						}
-					});
-				});
-
-				// console.log('allMatched??', allMatched);
-				setTimeout(() => {
-					resetTurn();
-				}, 700);
+				// setTimeout(() => {}, 1350);
 			} else {
 				console.log('no match :(');
 				setTimeout(() => {
 					resetTurn();
-				}, 700);
+				}, 1500);
 			}
-
-			// setTurns(turns + 1);
 		}
-
-		// eslint-disable-next-line array-callback-return
-
-		// check if every card has matched as true
-		// if (cards?.every((card) => card.matched === true)) {
-		// 	setAllMatched(true);
-		// }
-
-		// eslint-disable-next-line  array-callback-return
-		// cards.every((card) => {
-		// 	if (card.matched === true && card.matched !== false) {
-		// 		setAllMatched(true);
-		// 	}
-		// });
-		// cards.every(isAllMatched);
-
-		// function isAllMatched(el, index, arr) {
-		// 	el.matched === true ? setAllMatched(true) : setAllMatched(false);
-		// }
 
 		if (score === cardsImages.length && score !== 0) {
 			setAllMatched(true);
@@ -151,13 +128,8 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 
 	useEffect(() => {
 		if (allMatched) {
-			console.log('im in all matched cuz its true');
-			// and send to parent that the game is solved / done
-			//-> here
-
-			// nextQuestion();
+			// console.log('im in all matched cuz its true');
 			onQuestionCheck();
-			// trigger this and you will be fine
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [allMatched]);
@@ -182,6 +154,7 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 						disabled={disabled}
 						faded={faded}
 						isMatched={card.matched}
+						choiceTwo={choiceTwo}
 					/>
 				))}
 			</div>

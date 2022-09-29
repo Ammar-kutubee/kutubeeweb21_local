@@ -25,6 +25,7 @@ export default function QuestionWrapper({
 	onQuestionCheck,
 	checkingDndAns,
 	setCheckingDndAns,
+	checkingPhase,
 }) {
 	// const [selectedAnswer, setSelectedAnswer] = useState(null)
 	console.log(currentLanguage);
@@ -146,6 +147,7 @@ export default function QuestionWrapper({
 					questionTagg={questionData.name}
 					checkingDndAns={checkingDndAns}
 					setCheckingDndAns={setCheckingDndAns}
+					checkingPhase={checkingPhase}
 				/>
 			) : questionData.questionType === 'memory_game' ? (
 				<QuestionAnswersMemory

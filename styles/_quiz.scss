@@ -74,6 +74,8 @@
 	justify-content: center;
 }
 .answersWrapper {
+	// font-family: $hekayaLight;
+	font-family: 'FF Hekaya Light' !important;
 	align-items: center;
 	justify-content: center;
 	flex-grow: 1;
@@ -275,8 +277,8 @@
 	font-family: 'FF Hekaya Light';
 	font-style: normal;
 	font-weight: 900;
-	font-size: 46px;
-	line-height: 60px;
+	font-size: 36px;
+	line-height: 38px;
 	box-sizing: border-box;
 }
 
