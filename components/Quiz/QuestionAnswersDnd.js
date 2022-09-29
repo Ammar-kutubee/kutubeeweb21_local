@@ -110,16 +110,18 @@ export default function QuestionAnswersDnd(props) {
 		});
 
 		setOk(allAnswersFalse);
-	}, [columns]);
+	}, [columns, props.checkingPhase]);
 
 	useEffect(() => {
 		// onQuestionCheck();
 		if (ok) {
 			// onQuestionCheck();
 			props.setCheckingDndAns(ok);
-		} else console.log('else');
+		} else props.setCheckingDndAns(ok);
+
 		console.log('okkkkkkkk', ok);
 	}, [ok]);
+
 	return (
 		<div
 			className='dndGame'
@@ -175,7 +177,12 @@ export default function QuestionAnswersDnd(props) {
 												width: 194,
 												height: 60,
 												marginTop: 10.15,
-												border: column.items.length === 0 ? '2px dashed #B1B1B1' : '',
+												border:
+													column.items.length === 0
+														? props.checkingPhase === true
+															? '3px solid #E52730'
+															: '2px dashed #B1B1B1'
+														: '3px solid #6AC3DB',
 												borderRadius: '8px',
 												display: 'flex',
 												flexDirection: 'column',
@@ -206,10 +213,12 @@ export default function QuestionAnswersDnd(props) {
 																		color: 'grey',
 																		border:
 																			column.items.length === 0
-																				? '2px solid #E5E5E5'
-																				: props.checkingDndAns
-																				? '3px solid #6AC3DB'
-																				: '3px solid #E52730',
+																				? '3px solid #E52730'
+																				: props.checkingPhase === true
+																				? column.items?.[0]?.content === column.correctAnswer
+																					? '3px solid #86CF0E'
+																					: '3px solid #E52730'
+																				: '3px solid #6AC3DB',
 																		boxShadow: '0px 0px 10px 2px rgba(37, 39, 38, 0.047476)',
 																		borderRadius: 8,
 																		...provided.draggableProps.style,
