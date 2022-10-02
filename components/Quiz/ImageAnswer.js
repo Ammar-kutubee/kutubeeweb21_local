@@ -10,6 +10,7 @@ export default function ImageAnswer({
 	hideRightAnswer,
 	highlight,
 	currentLanguage,
+	directSort,
 }) {
 	return (
 		<div
@@ -18,26 +19,28 @@ export default function ImageAnswer({
 			}}
 			key={index}
 			className='answerWrapper'
+			////add  currentLanguage tern if also check the font family error!
+			style={{ gap: '1.5vw', float: 'left', direction: 'rtl' }}
 		>
 			<div
 				className={`textAnswerNumber ${selected ? 'selected' : ''} ${
 					selectedAnswerData != null && selected ? (secondAttmept ? null : selectedAnswerData.correct ? 'true-green' : 'false-red') : ''
 				}`}
 			>
-				{currentLanguage == 'ar' ? '.' + (index + 1) : index + 1 + '.'}
+				{currentLanguage == 'ar' && directSort !== 'sorting' ? '.' + (index + 1) : index + 1 + '.'}
 			</div>
 
 			<div className='answerBoxShadow'>
-				<div className={`textAnswerBox ${highlight ? 'textAnswerBoxHighlight' : ''}`}>
+				<div
+					className={`textAnswerBox ${highlight ? 'textAnswerBoxHighlight' : ''}`}
+					style={{ width: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+				>
 					{/* TODO change img tag to Next Image , chnage width and height also (* + dynamic) */}
 					<img
 						src={answer.name}
 						style={{
-							width: '180px',
-							height: 'auto',
-							objectFit: 'contain',
-							margin: 'auto',
-							display: 'flex',
+							width: '10vw',
+							float: 'right',
 						}}
 					/>
 				</div>
@@ -51,6 +54,7 @@ export default function ImageAnswer({
 								: 'false-red-border'
 							: ''
 					}`}
+					style={{ float: 'right' }}
 				/>
 			</div>
 		</div>

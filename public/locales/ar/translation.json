@@ -23,10 +23,10 @@
 		"quiz": "تحدي",
 		"book": "كتاب",
 		"download": "تحميل",
-		"backBt":"رجوع",
-		"backAssignment":"رجوع الى صفحة الواجب",
-		"backOpenLibrary":"رجوع الى المكتبة المفتوحة",
-		"backLevels":"رجوع الى صفحة المستويات"
+		"backBt": "رجوع",
+		"backAssignment": "رجوع الى صفحة الواجب",
+		"backOpenLibrary": "رجوع الى المكتبة المفتوحة",
+		"backLevels": "رجوع الى صفحة المستويات"
 	},
 	"homeScreen": {
 		"wellDone": "أحسنت {{name}} <span class='claff'></span>",
@@ -113,8 +113,8 @@
 		"magazines": "مجلّات",
 		"noResult": "لم نجد كتبًا لها علاقة ب",
 		"more": "المزيد",
-		"sorrynobook":"آسف! لم نتمكن من العثور على أي كتب لـ",
-		"searchResults":"نتائج البحث عن"
+		"sorrynobook": "آسف! لم نتمكن من العثور على أي كتب لـ",
+		"searchResults": "نتائج البحث عن"
 	},
 	"bookScreen": {
 		"read": "قراءة",
@@ -147,11 +147,10 @@
 		"filter": "فلتر",
 		"levels": "المستويات",
 		"resources": "مصادر إضافية",
-		"listenPlan":"خطة الدرس",
-		"activitySheet":"صفحة نشاط",
-		"assessmentSheet":"نموذج تقييم",
-		"assign":"تعيين واجب",
-
+		"listenPlan": "خطة الدرس",
+		"activitySheet": "صفحة نشاط",
+		"assessmentSheet": "نموذج تقييم",
+		"assign": "تعيين واجب",
 		"genre": "النوع الأدبي",
 		"subjects": "الموضوعات",
 		"resetFilter": "إعادة تعيين الفلتر",
@@ -176,9 +175,9 @@
 			"noteTool": "أداة تسجيل الملاحظات",
 			"noteToolDesc": "وصف أداة تسجيل الملاحظات"
 		},
-		"recordingWait":"الرجاء الإنتظار لتحميل التسجيل الصوتي",
-		"studentNo":"عدد الطلاب الذين قاموا بقراءة الكتاب",
-		"student":"طالب",
+		"recordingWait": "الرجاء الإنتظار لتحميل التسجيل الصوتي",
+		"studentNo": "عدد الطلاب الذين قاموا بقراءة الكتاب",
+		"student": "طالب",
 		"done": "تم",
 		"additions": "إضافات",
 		"definition": "تعريف",
@@ -244,7 +243,8 @@
 		"explore": "اسكتشف كتبًا أخرى",
 		"readAgainButton": "قراءة مرة أخرى",
 		"goBack": "العودة إلى صفحة الكتاب",
-		"ModalDescription": "الرجاء قراءة الكتاب أو الاستماع إليه لتتمكن من الكشف عن التحدي"
+		"ModalDescription": "الرجاء قراءة الكتاب أو الاستماع إليه لتتمكن من الكشف عن التحدي",
+		"WrongAns": " إجابتك خاطئة، حاول مرة اخرى"
 	},
 	"readingTime": {
 		"readingTime": "وقت القراءة",
@@ -294,7 +294,7 @@
 		"latestBadge": "الوسام الأحدث",
 		"badgeslist": "لائحة الأوسمة",
 		"openbadges": "تصفح لائحة الأوسمة",
-		"mainTitle":"الوسام الأحدث"
+		"mainTitle": "الوسام الأحدث"
 	},
 	"leaderboard": {
 		"leaderboard": "قائمة الصدارة",
@@ -307,7 +307,7 @@
 		"books": "كتب",
 		"points": "نقاط",
 		"you": "أنت",
-		"back":"العودة إلى القائمة الرئيسية"
+		"back": "العودة إلى القائمة الرئيسية"
 	},
 	"settings": {
 		"settings": "الإعدادات",

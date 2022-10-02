@@ -12,6 +12,7 @@ export default function TextAnswer({
 	hideRightAnswer,
 	highlight,
 	currentLanguage,
+	directSort,
 }) {
 	return (
 		<div
@@ -26,7 +27,7 @@ export default function TextAnswer({
 					selectedAnswerData != null && selected ? (secondAttmept ? null : selectedAnswerData.correct ? '' : '') : ''
 				}`}
 			>
-				{currentLanguage == 'ar' ? '.' + (index + 1) : index + 1 + '.'}
+				{currentLanguage == 'ar' && directSort !== 'sorting' ? '.' + (index + 1) : index + 1 + '.'}
 			</div>
 
 			<div className='answerBoxShadow'>

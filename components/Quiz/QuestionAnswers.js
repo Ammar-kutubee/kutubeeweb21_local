@@ -25,6 +25,7 @@ export default function QuestionAnswers({
 	console.log(questionTypee);
 	return (
 		<div className={` answersWrapper ${answerType == 'image' ? 'answersWrapperImages' : ''}`}>
+			{/* [ ] check if the placeholder is not changing with english or arabic (based on language) */}
 			{questionTypee === 'open' ? (
 				<textarea
 					className='openAnswerTag'
