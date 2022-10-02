@@ -1,12 +1,23 @@
 //rfc
 import React from 'react';
+// import useSound from 'use-sound';
+// import ReactAudioPlayer from 'react-audio-player';
+// import pageFlips from '../../public/sounds/page-flip.mp3';
 // import './SignleCard.css';
+
+// const musicPlayers = (useRef < HTMLAudioElement) | (undefined > (typeof Audio !== 'undefined' ? new Audio('') : undefined));
 
 export default function SignleCard({ card, handleChoice, flipped, disabled, faded, isMatched, choiceTwo }) {
 	// console.log(disabled);
+	// const [playActive] = useSound(pageFlips, { volume: 0.25 });
+	const pageFlip = new Audio('./sounds/sfx/quiz/adriantnt_u_click.mp3');
+
 	const hadnleClick = () => {
 		if (!disabled) {
 			handleChoice(card);
+			// playActive;
+			pageFlip.play();
+			// musicPlayers?.play();
 		}
 	};
 
@@ -31,6 +42,7 @@ export default function SignleCard({ card, handleChoice, flipped, disabled, fade
 					?
 				</p>
 			</div>
+			{/* <ReactAudioPlayer src='./sounds/page-flip.mp3' autoPlay controls /> */}
 		</div>
 	);
 }

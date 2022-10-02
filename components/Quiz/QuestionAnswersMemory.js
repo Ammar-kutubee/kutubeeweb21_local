@@ -4,12 +4,14 @@ import React, { useState, useEffect } from 'react';
 
 import SingleCard from './SingleCard.js';
 
-// import TextAnswer from './TextAnswer';
-// import ImageAnswer from './ImageAnswer';
+// const pageFlip = new Audio('./sounds/page-flip1.mp3');
 
 function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionCheck, questionTagg }) {
 	console.log('ansssweers', answers);
 	console.log('selectedAnswerData', selectedAnswerData);
+	const matchAudio = new Audio('./sounds/page-flip1.mp3');
+	const winAudio = new Audio('./sounds/sfx/quiz/correct_5.mp3');
+
 	// console.log('propsss???', props);
 
 	const cardsImages = [];
@@ -23,6 +25,7 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 			cardsImages.push(obj);
 		});
 
+	// required structure :=>
 	// const cardsImages = [
 	// 	{ src: answers[0]?.name, matched: false },
 	// 	{ src: answers[1]?.name, matched: false },
@@ -73,6 +76,8 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 
 			if (choiceOne.src === choiceTwo.src && choiceOne.id !== choiceTwo.id) {
 				console.log('thats a match yay :)');
+				matchAudio.play();
+
 				setScore(score + 1);
 				setTimeout(() => {
 					setFaded(false);
@@ -129,6 +134,7 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 	useEffect(() => {
 		if (allMatched) {
 			// console.log('im in all matched cuz its true');
+			winAudio.play();
 			onQuestionCheck();
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps

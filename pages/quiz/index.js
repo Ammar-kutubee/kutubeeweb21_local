@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import CustomButton from '../../components/CustomButton';
 
-import Insidelayout from '../../components/layouts/insidelayout';
+// import Insidelayout from '../../components/layouts/insidelayout';
 import { getQuizData } from '../../src/utils/apis';
 import NumberOfQuestions from '../../components/Quiz/NumberOfQuestions';
 import QuestionWrapper from '../../components/Quiz/QuestionWrapper';
 import QuizResult from '../../components/Quiz/QuizResult';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-import GoogleLogin from 'react-google-login';
-import { fa } from 'faker/lib/locales';
+// import GoogleLogin from 'react-google-login'; // big file
+// import { fa } from 'faker/lib/locales'; //very big file
 
 const Quiz = () => {
+	const cheerAudio = new Audio('./sounds/sfx/quiz/cheering.mp3');
+	const wrongAnsAudio = new Audio('./sounds/sfx/quiz/wrong3.mp3');
+	const clickAudio = new Audio('./sounds/sfx/quiz/adriantnt_u_click.mp3');
+
 	const state = useSelector((state) => state.mainReducer);
 	const [loading, setLoading] = useState(true);
 	const [quizData, setQuizData] = useState(null);
@@ -25,7 +29,7 @@ const Quiz = () => {
 	const [quizFinished, setQuizFinished] = useState(false);
 	const [userOrder, setUserOrder] = useState([]);
 	const [correctDndtAnswers, setCorrecDndtAnswers] = useState(false);
-	const [wrongDndAnswers, setWrongDndAnswers] = useState(false);
+	const [wrongDndAnswers, setWrongDndAnswers] = useState(false); // not used
 	const [secondAttmept, setSecondAttmept] = useState(false);
 
 	//  21/sep add for check button
@@ -34,9 +38,12 @@ const Quiz = () => {
 	// 21/sep added for memory game to go for next question
 	// const [allMatched, setAllMatched] = useState(false);
 
-	//28/sep added for dnd game to check answers
+	// 28/sep added for dnd game to check answers
 	const [checkingDndAns, setCheckingDndAns] = useState(false);
 	const [checkingPhase, setCheckingPhase] = useState(false);
+
+	// 2/oct added to show the red error message on wrong asnwers (x SVG with message)
+	const [showWrongX, setShowWrongX] = useState(false);
 
 	const router = useRouter();
 	const [bookId, setBookId] = useState(null);
@@ -137,6 +144,7 @@ const Quiz = () => {
 					setCheckingPhase(false);
 					nextQuestion();
 				}, 1000);
+				cheerAudio.play();
 			} else {
 				setCorrecDndtAnswers(false);
 				if (questionAttempts == 0) {
@@ -157,17 +165,26 @@ const Quiz = () => {
 						// setAllAnswers([...answersTmp])
 						// setCurrentSelectedAnswer(null)
 
+						setShowWrongX(false);
+
 						if (quizData.quizData[currentQuestion].questionType === 'sorting') {
 							setDisableCheck(false);
 						} else {
 							setSecondAttmept(true);
 						}
 					}, 1000);
+					setShowWrongX(true);
 					//}
 				} else if (questionAttempts == 1) {
+					wrongAnsAudio.play();
 					setSecondAttmept(false);
-
 					nextQuestion();
+
+					//[ ] check with the client if the want the  2nd show wrong message or not
+					// setTimeout(() => {
+					// 	setShowWrongX(false);
+					// }, 750);
+					// setShowWrongX(true);
 				}
 			}
 			// checkAnswer()
@@ -311,15 +328,32 @@ const Quiz = () => {
 							) : (
 								<div style={{ flexGrow: 1 }} />
 							)}
+
 							<div>
-								<div style={{ paddingRight: '4vw', paddingLeft: '4vw' }} className='btn-wrapper-quiz-width'>
+								{showWrongX ? (
+									<div className='wrongAnsMessgae'>
+										<div style={{ textAlign: 'left', display: 'flex', gap: 10 }}>
+											<img src='/xAnswer.svg' alt='xAnswer' />
+											<p style={{ color: '#E52730', fontFamily: 'FF Hekaya Light', fontSize: '36px' }}>
+												{t('quiz.WrongAns', { lng: currentLanguage })}
+											</p>
+										</div>
+									</div>
+								) : (
+									''
+								)}
+
+								<div style={{ paddingRight: '3vw', paddingLeft: '3vw' }} className='btn-wrapper-quiz-width'>
 									{showButton && (
 										<CustomButton
 											buttonStyle={{
 												marginBottom: '10px',
 											}}
 											disabled={disableCheck}
-											onPress={onQuestionCheck}
+											onPress={() => {
+												onQuestionCheck();
+												clickAudio.play();
+											}}
 											text={t('bookScreen.check', { lng: currentLanguage })}
 										/>
 									)}

@@ -23,10 +23,10 @@
         "quiz": "Quiz",
         "book": "Book",
         "download": "Download",
-        "backBt":"Back",
-        "backAssignment":"Back to assignment page",
-        "backOpenLibrary":"Back to open library page",
-        "backLevels":"Back to levels page"
+        "backBt": "Back",
+        "backAssignment": "Back to assignment page",
+        "backOpenLibrary": "Back to open library page",
+        "backLevels": "Back to levels page"
     },
     "homeScreen": {
         "wellDone": "Well done {{name}} <span class='claff' style='    padding-top: 0px;'></span>",
@@ -113,8 +113,8 @@
         "magazines": "Magazines",
         "noResult": "Sorry! we couldn't find any books related to",
         "more": "More",
-        "sorrynobook":"Sorry! We Could't find any books for",
-        "searchResults":"Search results for"
+        "sorrynobook": "Sorry! We Could't find any books for",
+        "searchResults": "Search results for"
     },
     "bookScreen": {
         "read": "Read",
@@ -146,11 +146,10 @@
     "filter": {
         "filter": "Filter",
         "resources": "Additional Resources",
-        "listenPlan":"Listen plan",
-		"activitySheet":"Activity sheet",
-		"assessmentSheet":"Assessment sheet",
-		"assign":"Assign homework",
-
+        "listenPlan": "Listen plan",
+        "activitySheet": "Activity sheet",
+        "assessmentSheet": "Assessment sheet",
+        "assign": "Assign homework",
         "levels": "Levels",
         "genre": "Genre",
         "subjects": "Subjects",
@@ -176,9 +175,9 @@
             "noteTool": "Note tool",
             "noteToolDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
         },
-        "recordingWait":"Please wait until the audio recording is uploaded",
-        "studentNo":"The number of students who have read the book",
-        "student":"student",
+        "recordingWait": "Please wait until the audio recording is uploaded",
+        "studentNo": "The number of students who have read the book",
+        "student": "student",
         "done": "Done",
         "additions": "Additions",
         "definition": "Definition",
@@ -244,7 +243,8 @@
         "explore": "Explore the library",
         "readAgainButton": "Read Again",
         "goBack": "Go back to open library",
-        "ModalDescription": "Please complete reading or listning mode to take the quiz"
+        "ModalDescription": "Please complete reading or listning mode to take the quiz",
+        "WrongAns": "Your answer is wrong, try again"
     },
     "readingTime": {
         "readingTime": "Reading Time",
@@ -294,7 +294,7 @@
         "latestBadge": "Latest badge",
         "badgeslist": "Badges List",
         "openbadges": "Open badges list",
-        "mainTitle":"Lastest Badge"
+        "mainTitle": "Lastest Badge"
     },
     "leaderboard": {
         "leaderboard": "Leader Board",
@@ -307,7 +307,7 @@
         "books": "Books",
         "points": "Points",
         "you": "You",
-        "back":"Back to Profile page"
+        "back": "Back to Profile page"
     },
     "settings": {
         "settings": "Settings",
@@ -460,10 +460,10 @@
             "getItem": "Get this item when you redeem {{points}} points",
             "redeemPoints": "Redeem points",
             "currentPoint2": "Your current points is",
-			"getItem2": "Get this item when you redeem",
+            "getItem2": "Get this item when you redeem",
             "answerYes": "Yes",
-			"answerNo": "No",
-			"ConfirmTxt": "Are you sure to buy"
+            "answerNo": "No",
+            "ConfirmTxt": "Are you sure to buy"
         }
     },
     "doneMessages": {

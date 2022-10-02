@@ -91,6 +91,7 @@
 	align-items: center;
 	display: flex;
 	margin-top: 30px;
+	gap: 10;
 }
 
 .textAnswerNumber {
@@ -105,7 +106,11 @@
 
 .rtlDir > .questionWrapper .textAnswerNumber {
 	direction: ltr;
-	padding-left: 10px;
+	// direction: rtl;
+
+	// padding-left: 13px;
+	// padding-right: 13px;
+
 	// font-family: "adobe-arabic";
 }
 .textAnswerNumberArabic {
@@ -122,7 +127,7 @@
 	// object-fit: contain;
 	flex-grow: 1;
 	border-radius: 9px;
-	padding: 10px;
+	padding: 8px;
 	background-color: $white;
 	border-width: 1px;
 	border-color: $secondaryGrey;

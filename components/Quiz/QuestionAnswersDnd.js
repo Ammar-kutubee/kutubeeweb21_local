@@ -209,7 +209,7 @@ export default function QuestionAnswersDnd(props) {
 																		minHeight: '60px',
 																		maxHeight: '60px',
 																		width: column.items.length === 0 ? '136px' : 194,
-																		background: snapshot.isDragging ? 'pink' : 'white',
+																		background: snapshot.isDragging ? 'white' : 'white',
 																		color: 'grey',
 																		border:
 																			column.items.length === 0
@@ -315,7 +315,7 @@ export default function QuestionAnswersDnd(props) {
 																		minHeight: '60px',
 																		maxHeight: '60px',
 																		width: '136px',
-																		background: snapshot.isDragging ? 'pink' : 'white',
+																		background: snapshot.isDragging ? 'white' : 'white',
 																		color: 'grey',
 																		border: '1.5px solid #E5E5E5',
 																		boxShadow: '0px 0px 10px 2px rgba(37, 39, 38, 0.047476)',
