@@ -9,13 +9,16 @@ import QuestionWrapper from '../../components/Quiz/QuestionWrapper';
 import QuizResult from '../../components/Quiz/QuizResult';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
+// import { ar } from 'faker/lib/locales';
 // import GoogleLogin from 'react-google-login'; // big file
 // import { fa } from 'faker/lib/locales'; //very big file
+let arr = [];
 
 const Quiz = () => {
 	const cheerAudio = new Audio('./sounds/sfx/quiz/cheering.mp3');
 	const wrongAnsAudio = new Audio('./sounds/sfx/quiz/wrong3.mp3');
 	const clickAudio = new Audio('./sounds/sfx/quiz/adriantnt_u_click.mp3');
+	const lostAudio = new Audio('./sounds/sfx/quiz/try-again.mp3');
 
 	const state = useSelector((state) => state.mainReducer);
 	const [loading, setLoading] = useState(true);
@@ -44,6 +47,10 @@ const Quiz = () => {
 
 	// 2/oct added to show the red error message on wrong asnwers (x SVG with message)
 	const [showWrongX, setShowWrongX] = useState(false);
+
+	///
+	const [, updateState] = React.useState();
+	const forceUpdate = React.useCallback(() => updateState({}), []);
 
 	const router = useRouter();
 	const [bookId, setBookId] = useState(null);
@@ -75,10 +82,32 @@ const Quiz = () => {
 		return () => {};
 	}, []);
 
+	// for  multiple choice game
 	const onSelectAnswer = (index) => {
 		setDisableCheck(false);
 		setCurrentSelectedAnswer(index);
 	};
+	// for multiple answers game
+	const onSelectMultipleAnswers = (index) => {
+		forceUpdate();
+		setDisableCheck(false);
+		if (arr.includes(index)) {
+			arr = arr.filter((e) => e !== index);
+			setCurrentSelectedAnswer(arr);
+		} else {
+			arr.push(index);
+			console.log('arrrr', arr);
+			setCurrentSelectedAnswer(arr);
+		}
+		// setCurrentSelectedAnswer(index);
+		console.log(currentSelectedAnswer);
+	};
+	// useEffect(() => {
+	// 	return () => {
+	// 		'';
+	// 	};
+	// }, [currentSelectedAnswer]);
+
 	const nextQuestion = () => {
 		if (currentQuestion < quizData.quizData.length - 1) {
 			let nextQu = currentQuestion + 1;
@@ -148,9 +177,17 @@ const Quiz = () => {
 			} else {
 				setCorrecDndtAnswers(false);
 				if (questionAttempts == 0) {
+					wrongAnsAudio.play();
+
 					setDisableCheck(false);
 
-					setQuestionAttempts(questionAttempts + 1);
+					// setQuestionAttempts(questionAttempts + 1);
+					setQuestionAttempts(questionAttempts);
+					arr = [];
+
+					setTimeout(() => {
+						setCurrentSelectedAnswer(null);
+					}, 1000);
 
 					if (
 						quizData.quizData[currentQuestion].questionType === 'sorting' ||
@@ -176,7 +213,7 @@ const Quiz = () => {
 					setShowWrongX(true);
 					//}
 				} else if (questionAttempts == 1) {
-					wrongAnsAudio.play();
+					lostAudio.play();
 					setSecondAttmept(false);
 					nextQuestion();
 
@@ -272,6 +309,34 @@ const Quiz = () => {
 			};
 			setAllAnswers([...answersTmp]);
 			return true;
+		} else if (quizData.quizData?.[currentQuestion].questionType === 'multiple_answers') {
+			let answers = [];
+			let len = quizData.quizData?.[currentQuestion].answers.filter((ele) => ele.correct === true).length;
+
+			for (let index = 0; index < currentSelectedAnswer?.length; index++) {
+				if (quizData.quizData?.[currentQuestion].answers?.[currentSelectedAnswer[index]].correct === true) {
+					answers.push(true);
+				} else answers.push(false);
+			}
+
+			// let answers = quizData.quizData?.[currentQuestion].answers?.map((ele) => ele.correct);
+			let answersTmp = allAnswers;
+			// console.log('answersanswers', answers);
+			console.log('answersanswers', quizData.quizData?.[currentQuestion].answers);
+			answersTmp[currentQuestion] = {
+				correct: answers?.every((elee) => elee === true) && len === answers.length ? true : false,
+				answerId: quizData.quizData?.[currentQuestion].answers?.[currentSelectedAnswer]?.id,
+				questionId: quizData.quizData?.[currentQuestion]?.id,
+			};
+			setAllAnswers([...answersTmp]);
+			// console.log('allAnswersallAnswers', allAnswers);
+			console.log(1010101010101010, answers);
+
+			if (answers?.every((elee) => elee === true) && len === answers.length) {
+				return true;
+			} else {
+				return false;
+			}
 		} else {
 			let answer = quizData.quizData?.[currentQuestion].answers?.[currentSelectedAnswer];
 			let answersTmp = allAnswers;
@@ -324,6 +389,7 @@ const Quiz = () => {
 									checkingDndAns={checkingDndAns}
 									setCheckingDndAns={setCheckingDndAns}
 									checkingPhase={checkingPhase}
+									onSelectMultipleAnswers={onSelectMultipleAnswers}
 								/>
 							) : (
 								<div style={{ flexGrow: 1 }} />

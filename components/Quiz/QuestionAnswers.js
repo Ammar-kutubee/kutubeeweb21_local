@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ImageAnswer from './ImageAnswer';
 import TextAnswer from './TextAnswer';
@@ -21,8 +21,8 @@ export default function QuestionAnswers({
 	currentLanguage,
 	questionTypee,
 	placeHolderr,
+	onSelectMultipleAnswers,
 }) {
-	console.log(questionTypee);
 	return (
 		<div className={` answersWrapper ${answerType == 'image' ? 'answersWrapperImages' : ''}`}>
 			{/* [ ] check if the placeholder is not changing with english or arabic (based on language) */}
@@ -43,6 +43,71 @@ export default function QuestionAnswers({
 						borderRadius: '8px',
 					}}
 				/>
+			) : questionTypee === 'multiple_answers' ? (
+				answers?.map((answer, index) => {
+					if (answerType == 'image') {
+						return (
+							<ImageAnswer
+								placementTest={placementTest}
+								secondAttmept={secondAttmept}
+								currentLanguage={currentLanguage}
+								highlight={playedAnswerAudio == index}
+								hideRightAnswer={hideRightAnswer}
+								selectedAnswerData={selectedAnswerData}
+								// selected={selectedAnswer == index}
+								selected={selectedAnswer?.includes(index)}
+								answer={answer}
+								index={index}
+								onSelectAnswer={onSelectAnswer}
+								currentSelectedAnswer={currentSelectedAnswer}
+								onSelectMultipleAnswers={onSelectMultipleAnswers}
+								questionTypee={questionTypee}
+							/>
+						);
+					} else {
+						if (placementTest === true) {
+							return (
+								<TextAnswerPlacement
+									secondAttmept={secondAttmept}
+									wrongAnswers={wrongAnswers}
+									currentLanguage={currentLanguage}
+									highlight={playedAnswerAudio == index}
+									hideRightAnswer={hideRightAnswer}
+									selectedAnswerData={selectedAnswerData}
+									// selected={selectedAnswer == index}
+									selected={selectedAnswer?.includes(index)}
+									answer={answer}
+									index={index}
+									onSelectAnswer={onSelectAnswer}
+									currentSelectedAnswer={currentSelectedAnswer}
+									onSelectMultipleAnswers={onSelectMultipleAnswers}
+									questionTypee={questionTypee}
+								/>
+							);
+						} else {
+							return (
+								<TextAnswer
+									placementTest={placementTest}
+									secondAttmept={secondAttmept}
+									wrongAnswers={wrongAnswers}
+									currentLanguage={currentLanguage}
+									highlight={playedAnswerAudio == index}
+									hideRightAnswer={hideRightAnswer}
+									selectedAnswerData={selectedAnswerData}
+									// selected={selectedAnswer == index}
+									selected={selectedAnswer?.includes(index)}
+									// selected={selectedAnswer}
+									answer={answer}
+									index={index}
+									onSelectAnswer={onSelectAnswer}
+									currentSelectedAnswer={currentSelectedAnswer}
+									onSelectMultipleAnswers={onSelectMultipleAnswers}
+									questionTypee={questionTypee}
+								/>
+							);
+						}
+					}
+				})
 			) : (
 				answers?.map((answer, index) => {
 					if (answerType == 'image') {
@@ -59,6 +124,8 @@ export default function QuestionAnswers({
 								index={index}
 								onSelectAnswer={onSelectAnswer}
 								currentSelectedAnswer={currentSelectedAnswer}
+								onSelectMultipleAnswers={onSelectMultipleAnswers}
+								questionTypee={questionTypee}
 							/>
 						);
 					} else {
@@ -76,6 +143,8 @@ export default function QuestionAnswers({
 									index={index}
 									onSelectAnswer={onSelectAnswer}
 									currentSelectedAnswer={currentSelectedAnswer}
+									onSelectMultipleAnswers={onSelectMultipleAnswers}
+									questionTypee={questionTypee}
 								/>
 							);
 						} else {
@@ -93,6 +162,8 @@ export default function QuestionAnswers({
 									index={index}
 									onSelectAnswer={onSelectAnswer}
 									currentSelectedAnswer={currentSelectedAnswer}
+									onSelectMultipleAnswers={onSelectMultipleAnswers}
+									questionTypee={questionTypee}
 								/>
 							);
 						}

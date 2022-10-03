@@ -26,6 +26,7 @@ export default function QuestionWrapper({
 	checkingDndAns,
 	setCheckingDndAns,
 	checkingPhase,
+	onSelectMultipleAnswers,
 }) {
 	// const [selectedAnswer, setSelectedAnswer] = useState(null)
 	console.log(currentLanguage);
@@ -148,6 +149,7 @@ export default function QuestionWrapper({
 					checkingDndAns={checkingDndAns}
 					setCheckingDndAns={setCheckingDndAns}
 					checkingPhase={checkingPhase}
+					onSelectMultipleAnswers={onSelectMultipleAnswers}
 				/>
 			) : questionData.questionType === 'memory_game' ? (
 				<QuestionAnswersMemory
@@ -167,6 +169,7 @@ export default function QuestionWrapper({
 					nextQuestion={nextQuestion}
 					onQuestionCheck={onQuestionCheck}
 					questionTagg={questionData.name}
+					onSelectMultipleAnswers={onSelectMultipleAnswers}
 				/>
 			) : questionData.questionType === 'sorting' ? (
 				<QuestionAnswersSorting
@@ -183,6 +186,7 @@ export default function QuestionWrapper({
 					answersType={questionData.answerType}
 					nextQuestion={nextQuestion}
 					questionTagg={questionData.name}
+					onSelectMultipleAnswers={onSelectMultipleAnswers}
 				/>
 			) : (
 				<QuestionAnswers
@@ -200,6 +204,7 @@ export default function QuestionWrapper({
 					// answersType={questionData.answerType}
 					questionTypee={questionData.questionType}
 					placeHolderr={questionData.name}
+					onSelectMultipleAnswers={onSelectMultipleAnswers}
 				/>
 			)}
 		</div>

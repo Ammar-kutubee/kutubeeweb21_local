@@ -13,19 +13,49 @@ export default function TextAnswer({
 	highlight,
 	currentLanguage,
 	directSort,
+	onSelectMultipleAnswers,
+	questionTypee,
 }) {
 	const clickAudio = new Audio('./sounds/sfx/quiz/adriantnt_u_click.mp3');
 
+	console.log(
+		// placementTest,
+		// correctDndtAnswers,
+		// answer,
+		// secondAttmept,
+		// index,
+		selected
+		// onSelectAnswer,
+		// selectedAnswerData,
+		// hideRightAnswer,
+		// highlight,
+		// currentLanguage,
+		// directSort,
+		// onSelectMultipleAnswers
+		// questionTypee
+	);
+	console.log('plzzzzzzzzz', selectedAnswerData);
+	let Lang = 'rtl';
+	if (currentLanguage === 'ar') {
+		Lang = 'rtl';
+	} else Lang = 'ltr';
 	return (
 		<div
-			onClick={() => {
-				onSelectAnswer(index);
+			onClick={(e) => {
+				// console.log(e);
+				if (questionTypee === 'multiple_answers') {
+					// if (answer.correct) {
+					// 	onSelectMultipleAnswers(index);
+					// }
+					onSelectMultipleAnswers(index);
+					// onSelectAnswer(index);
+				} else onSelectAnswer(index);
 				clickAudio.play();
 			}}
 			key={index}
 			className='answerWrapper'
 			//add  currentLanguage tern if
-			style={{ gap: '1.5vw', float: 'left', direction: 'rtl' }}
+			style={{ gap: '1.5vw', direction: Lang }}
 		>
 			<div
 				className={`textAnswerNumber ${selected ? 'selected' : ''} ${
@@ -34,7 +64,6 @@ export default function TextAnswer({
 			>
 				{currentLanguage == 'ar' && directSort !== 'sorting' ? '.' + (index + 1) : index + 1 + '.'}
 			</div>
-
 			<div className='answerBoxShadow'>
 				<div className={`textAnswerBox ${highlight ? 'textAnswerBoxHighlight' : ''}`}>
 					<div
@@ -48,7 +77,6 @@ export default function TextAnswer({
 				<div
 					className={`textAnswerBoxBorder 
                         ${selected ? 'border-blue' : ''} 
-                        
                         ${
 													selectedAnswerData != null && selected
 														? secondAttmept

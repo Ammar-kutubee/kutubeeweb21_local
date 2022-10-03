@@ -212,8 +212,8 @@ export const getBookRatings = async (bookId, showAll) => {
 export const getQuizData = async (bookId) => {
 	var promise = new Promise((resolve, reject) => {
 		const formData = new FormData();
-		// formData.append('bookId', bookId);
-		formData.append('bookId', 'book_1');
+		formData.append('bookId', bookId);
+		// formData.append('bookId', 'book_1');
 
 		axios.post('https://school.kutubee.com:4000/book/app/quiz/v3/getdata', formData).then((res) => {
 			resolve(res.data[0]);

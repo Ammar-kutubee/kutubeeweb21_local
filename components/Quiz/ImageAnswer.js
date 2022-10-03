@@ -11,16 +11,29 @@ export default function ImageAnswer({
 	highlight,
 	currentLanguage,
 	directSort,
+	correctDndtAnswers,
 }) {
+	let Lang = 'rtl';
+	if (currentLanguage === 'ar') {
+		Lang = 'rtl';
+	} else Lang = 'ltr';
 	return (
 		<div
-			onClick={() => {
-				onSelectAnswer(index);
+			onClick={(e) => {
+				// console.log(e);
+				if (questionTypee === 'multiple_answers') {
+					// if (answer.correct) {
+					// 	onSelectMultipleAnswers(index);
+					// }
+					onSelectMultipleAnswers(index);
+					// onSelectAnswer(index);
+				} else onSelectAnswer(index);
+				clickAudio.play();
 			}}
 			key={index}
 			className='answerWrapper'
 			////add  currentLanguage tern if also check the font family error!
-			style={{ gap: '1.5vw', float: 'left', direction: 'rtl' }}
+			style={{ gap: '1.5vw', float: 'right', direction: Lang }}
 		>
 			<div
 				className={`textAnswerNumber ${selected ? 'selected' : ''} ${
@@ -33,19 +46,21 @@ export default function ImageAnswer({
 			<div className='answerBoxShadow'>
 				<div
 					className={`textAnswerBox ${highlight ? 'textAnswerBoxHighlight' : ''}`}
-					style={{ width: '40%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+					style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
 				>
 					{/* TODO change img tag to Next Image , chnage width and height also (* + dynamic) */}
 					<img
 						src={answer.name}
 						style={{
-							width: '10vw',
-							float: 'right',
+							width: '11vw',
 						}}
 					/>
 				</div>
 				<div
-					className={`textAnswerBoxBorder ${selected ? 'border-blue' : ''} ${
+					className={`textAnswerBoxBorder 
+					${selected ? 'border-blue' : ''} 
+					
+					${
 						selectedAnswerData != null && selected
 							? secondAttmept
 								? null
@@ -53,8 +68,8 @@ export default function ImageAnswer({
 								? 'true-green-border'
 								: 'false-red-border'
 							: ''
-					}`}
-					style={{ float: 'right' }}
+					} 
+					${correctDndtAnswers === true ? 'true-green-border' : ''}`}
 				/>
 			</div>
 		</div>

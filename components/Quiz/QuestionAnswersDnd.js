@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { v4 as uuid } from 'uuid';
 
 const onDragEnd = (result, columns, setColumns) => {
+	const clickAudio = new Audio('./sounds/sfx/quiz/adriantnt_u_click.mp3');
+
 	console.log('result', result);
 	console.log('colunmssss', columns);
 	if (!result.destination) return;
@@ -16,6 +18,8 @@ const onDragEnd = (result, columns, setColumns) => {
 
 	//when changing columns & becare of droppableId and draggableId
 	if (source.droppableId !== destination.droppableId) {
+		clickAudio.play();
+
 		const sourceColumn = columns[source.droppableId];
 		const destinationColumn = columns[destination.droppableId];
 		const sourceItems = [...sourceColumn.items];
@@ -37,6 +41,8 @@ const onDragEnd = (result, columns, setColumns) => {
 	}
 	//on same column only changing order
 	else {
+		clickAudio.play();
+
 		const column = columns[source.droppableId];
 		const copiedItems = [...column.items];
 		const [removed] = copiedItems.splice(source.index, 1);

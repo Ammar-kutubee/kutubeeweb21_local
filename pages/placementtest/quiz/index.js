@@ -48,10 +48,19 @@ const PlacementQuiz = () => {
 		return () => {};
 	}, []);
 
+	// for  multiple choice game
 	const onSelectAnswer = (index) => {
 		setDisableCheck(false);
 		setCurrentSelectedAnswer(index);
 	};
+	// for multiple answers game
+	// const onSelectMultipleAnswers = (index) => {
+	// 	setDisableCheck(false);
+	// 	// setCurrentSelectedAnswer([...currentSelectedAnswer, index]);
+	// 	setCurrentSelectedAnswer(index);
+
+	// 	console.log(currentSelectedAnswer);
+	// };
 
 	const nextQuestion = () => {
 		if (currentQuestion < quizData.length - 1) {
@@ -140,6 +149,7 @@ const PlacementQuiz = () => {
 									currentSelectedAnswer={currentSelectedAnswer}
 									questionData={quizData[currentQuestion]}
 									nextQuestion={nextQuestion}
+									onSelectMultipleAnswers={onSelectMultipleAnswers}
 								/>
 							) : (
 								<div style={{ flexGrow: 1 }} />

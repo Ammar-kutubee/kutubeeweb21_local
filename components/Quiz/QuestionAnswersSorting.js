@@ -10,6 +10,7 @@ const SortableItem = sortableElement(({ value, props, index, index2 }) => {
 	return props.answerType == 'image' ? (
 		<ImageAnswer
 			currentLanguage={props.currentLanguage}
+			correctDndtAnswers={props.correctDndtAnswers}
 			// highlight={props.playedAnswerAudio == index}
 			highlight={props.playedAnswerAudio == index2}
 			hideRightAnswer={props.hideRightAnswer}
@@ -71,6 +72,7 @@ function QuestionSorting(props) {
 		setItems(props.answers);
 		props.setUserOrder(props.answers);
 	}, [props.answers]);
+	console.log(props);
 
 	const onSortEnd = ({ oldIndex, newIndex }) => {
 		let array = [...items];
@@ -102,7 +104,7 @@ function QuestionSorting(props) {
 						index={index}
 						index2={index}
 						value={answer}
-						style={{ paddingRight: 14, paddingLeft: 14, float: 'right' }}
+						style={{ paddingRight: 14, paddingLeft: 14 }}
 					/>
 				);
 			})}
