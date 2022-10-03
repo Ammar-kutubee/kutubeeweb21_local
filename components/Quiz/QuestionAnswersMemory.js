@@ -19,7 +19,7 @@ function QuestionMemory({ answers, nextQuestion, selectedAnswerData, onQuestionC
 	answers &&
 		answers?.map((answer) => {
 			let obj = {
-				src: answer.name || 'image not loaded check console',
+				src: answer.name || 'No Image added',
 				matched: false,
 			};
 			cardsImages.push(obj);
