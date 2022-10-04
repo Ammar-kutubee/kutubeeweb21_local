@@ -181,8 +181,8 @@ const Quiz = () => {
 
 					setDisableCheck(false);
 
-					// setQuestionAttempts(questionAttempts + 1);
-					setQuestionAttempts(questionAttempts);
+					setQuestionAttempts(questionAttempts + 1);
+					// setQuestionAttempts(questionAttempts);
 					arr = [];
 
 					setTimeout(() => {
